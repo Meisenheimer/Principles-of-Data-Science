@@ -1,0 +1,60 @@
+node=15 Static   dropout=0.0 lr=0.001           channel=1, train acc=0.8605, train auc=0.9230, test acc=0.7892, test auc=0.8804
+node=15 Static   dropout=0.0 lr=0.001           channel=2, train acc=0.8837, train auc=0.9459, test acc=0.7972, test auc=0.8847
+node=15 Static   dropout=0.0 lr=0.001           channel=4, train acc=0.9070, train auc=0.9644, test acc=0.7956, test auc=0.8820
+node=15 Static   dropout=0.1 lr=0.001           channel=1, train acc=0.7975, train auc=0.8609, test acc=0.7971, test auc=0.8874
+node=15 Static   dropout=0.1 lr=0.001           channel=2, train acc=0.8217, train auc=0.9054, test acc=0.7975, test auc=0.8871
+node=15 Static   dropout=0.1 lr=0.001           channel=4, train acc=0.8624, train auc=0.9395, test acc=0.7993, test auc=0.8867
+node=15 Static   dropout=0.1 lr=0.001           channel=8, train acc=0.9024, train auc=0.9668, test acc=0.7990, test auc=0.8858
+node=15 Dynamic  dropout=0.0 lr=0.001           channel=1, train acc=0.9719, train auc=0.9830, test acc=0.7755, test auc=0.8665
+node=15 Dynamic  dropout=0.0 lr=0.001           channel=2, train acc=0.9952, train auc=0.9977, test acc=0.7791, test auc=0.8586
+node=15 Dynamic  dropout=0.0 lr=0.001           channel=4, train acc=0.9990, train auc=0.9997, test acc=0.7783, test auc=0.8565
+node=15 Dynamic  dropout=0.0 lr=0.001 choose    channel=1, train acc=0.7316, train auc=0.8033, test acc=0.7061, test auc=0.7783
+node=15 Dynamic  dropout=0.0 lr=0.001 choose    channel=2, train acc=0.7405, train auc=0.8180, test acc=0.7094, test auc=0.7848
+node=15 Dynamic  dropout=0.0 lr=0.001 choose    channel=4, train acc=0.7498, train auc=0.8296, test acc=0.7110, test auc=0.7862
+node=15 Dynamic  dropout=0.1 lr=0.001           channel=1, train acc=0.9224, train auc=0.9650, test acc=0.7773, test auc=0.8668
+node=15 Dynamic  dropout=0.1 lr=0.001           channel=2, train acc=0.9715, train auc=0.9933, test acc=0.7778, test auc=0.8682
+node=15 Dynamic  dropout=0.1 lr=0.001           channel=4, train acc=0.9873, train auc=0.9988, test acc=0.7790, test auc=0.8674
+node=15 Dynamic  dropout=0.1 lr=0.001           channel=8, train acc=0.9919, train auc=0.9996, test acc=0.7788, test auc=0.8676
+node=15 Dynamic  dropout=0.1 lr=0.001 choose    channel=1, train acc=0.7000, train auc=0.7525, test acc=0.7027, test auc=0.7771
+node=15 Dynamic  dropout=0.1 lr=0.001 choose    channel=2, train acc=0.7108, train auc=0.7830, test acc=0.7072, test auc=0.7801
+node=15 Dynamic  dropout=0.1 lr=0.001 choose    channel=4, train acc=0.7314, train auc=0.8063, test acc=0.7122, test auc=0.7852
+node=15 Dynamic  dropout=0.1 lr=0.001 choose    channel=8, train acc=0.7490, train auc=0.8269, test acc=0.7139, test auc=0.7871
+node=25 Static   dropout=0.0 lr=0.001           channel=1, train acc=0.9539, train auc=0.9747, test acc=0.8400, test auc=0.9220
+node=25 Static   dropout=0.0 lr=0.001           channel=2, train acc=0.9913, train auc=0.9950, test acc=0.8472, test auc=0.9230
+node=25 Static   dropout=0.0 lr=0.001           channel=4, train acc=0.9959, train auc=0.9992, test acc=0.8461, test auc=0.9207
+node=25 Static   dropout=0.1 lr=0.001           channel=1, train acc=0.8760, train auc=0.9274, test acc=0.8429, test auc=0.9277
+node=25 Static   dropout=0.1 lr=0.001           channel=2, train acc=0.9202, train auc=0.9751, test acc=0.8550, test auc=0.9334
+node=25 Static   dropout=0.1 lr=0.001           channel=4, train acc=0.9507, train auc=0.9897, test acc=0.8518, test auc=0.9327
+node=25 Static   dropout=0.1 lr=0.001           channel=8, train acc=0.9676, train auc=0.9952, test acc=0.8518, test auc=0.9325
+node=25 Dynamic  dropout=0.0 lr=0.001           channel=1, train acc=0.9923, train auc=0.9963, test acc=0.8547, test auc=0.9419
+node=25 Dynamic  dropout=0.0 lr=0.001           channel=2, train acc=0.9991, train auc=0.9997, test acc=0.8617, test auc=0.9413
+node=25 Dynamic  dropout=0.0 lr=0.001           channel=4, train acc=0.9964, train auc=0.9966, test acc=0.8607, test auc=0.9383
+node=25 Dynamic  dropout=0.0 lr=0.001 choose    channel=1, train acc=0.8075, train auc=0.8875, test acc=0.7662, test auc=0.8519
+node=25 Dynamic  dropout=0.0 lr=0.001 choose    channel=2, train acc=0.8278, train auc=0.9078, test acc=0.7789, test auc=0.8620
+node=25 Dynamic  dropout=0.0 lr=0.001 choose    channel=4, train acc=0.8367, train auc=0.9166, test acc=0.7789, test auc=0.8615
+node=25 Dynamic  dropout=0.1 lr=0.001           channel=1, train acc=0.9365, train auc=0.9736, test acc=0.8540, test auc=0.9392
+node=25 Dynamic  dropout=0.1 lr=0.001           channel=2, train acc=0.9900, train auc=0.9983, test acc=0.8649, test auc=0.9429
+node=25 Dynamic  dropout=0.1 lr=0.001           channel=4, train acc=0.9954, train auc=0.9997, test acc=0.8633, test auc=0.9425
+node=25 Dynamic  dropout=0.1 lr=0.001           channel=8, train acc=0.9971, train auc=0.9999, test acc=0.8626, test auc=0.9440
+node=25 Dynamic  dropout=0.1 lr=0.001 choose    channel=1, train acc=0.7671, train auc=0.8333, test acc=0.7653, test auc=0.8522
+node=25 Dynamic  dropout=0.1 lr=0.001 choose    channel=2, train acc=0.7924, train auc=0.8733, test acc=0.7760, test auc=0.8587
+node=25 Dynamic  dropout=0.1 lr=0.001 choose    channel=4, train acc=0.8144, train auc=0.8961, test acc=0.7778, test auc=0.8589
+node=25 Dynamic  dropout=0.1 lr=0.001 choose    channel=8, train acc=0.8347, train auc=0.9142, test acc=0.7773, test auc=0.8612
+node=50 Static   dropout=0.0 lr=0.001           channel=1, train acc=0.9690, train auc=0.9882, test acc=0.9003, test auc=0.9664
+node=50 Static   dropout=0.0 lr=0.001           channel=2, train acc=0.9986, train auc=0.9994, test acc=0.9229, test auc=0.9770
+node=50 Static   dropout=0.0 lr=0.001           channel=4, train acc=1.0000, train auc=1.0000, test acc=0.9245, test auc=0.9775
+node=50 Static   dropout=0.1 lr=0.001           channel=1, train acc=0.9199, train auc=0.9656, test acc=0.8979, test auc=0.9671
+node=50 Static   dropout=0.1 lr=0.001           channel=2, train acc=0.9771, train auc=0.9967, test acc=0.9165, test auc=0.9765
+node=50 Static   dropout=0.1 lr=0.001           channel=4, train acc=0.9920, train auc=0.9995, test acc=0.9178, test auc=0.9779
+node=50 Dynamic  dropout=0.0 lr=0.001           channel=1, train acc=0.9937, train auc=0.9982, test acc=0.8726, test auc=0.9670
+node=50 Dynamic  dropout=0.0 lr=0.001           channel=2, train acc=0.9995, train auc=0.9998, test acc=0.9007, test auc=0.9702
+node=50 Dynamic  dropout=0.0 lr=0.001           channel=4, train acc=1.0000, train auc=1.0000, test acc=0.9089, test auc=0.9753
+node=50 Dynamic  dropout=0.0 lr=0.001 choose    channel=1, train acc=0.9111, train auc=0.9656, test acc=0.8472, test auc=0.9272
+node=50 Dynamic  dropout=0.0 lr=0.001 choose    channel=2, train acc=0.9492, train auc=0.9876, test acc=0.8627, test auc=0.9391
+node=50 Dynamic  dropout=0.0 lr=0.001 choose    channel=4, train acc=0.9553, train auc=0.9911, test acc=0.8621, test auc=0.9398
+node=50 Dynamic  dropout=0.1 lr=0.001           channel=1, train acc=0.9493, train auc=0.9824, test acc=0.8910, test auc=0.9718
+node=50 Dynamic  dropout=0.1 lr=0.001           channel=2, train acc=0.9922, train auc=0.9992, test acc=0.9032, test auc=0.9703
+node=50 Dynamic  dropout=0.1 lr=0.001           channel=4, train acc=0.9979, train auc=0.9998, test acc=0.9004, test auc=0.9698
+node=50 Dynamic  dropout=0.1 lr=0.001 choose    channel=1, train acc=0.8549, train auc=0.9235, test acc=0.8440, test auc=0.9275
+node=50 Dynamic  dropout=0.1 lr=0.001 choose    channel=2, train acc=0.9010, train auc=0.9672, test acc=0.8604, test auc=0.9376
+node=50 Dynamic  dropout=0.1 lr=0.001 choose    channel=4, train acc=0.9293, train auc=0.9808, test acc=0.8613, test auc=0.9390
