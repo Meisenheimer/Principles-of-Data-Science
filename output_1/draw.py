@@ -14,10 +14,10 @@ def loadFile(filename):
 
 
 def loadLog(dir):
-    train_acc = loadFile(os.path.join(dir, "train_acc.log"))[:, -1].mean()
-    test_acc = loadFile(os.path.join(dir, "test_acc.log"))[:, -1].mean()
-    train_auc = loadFile(os.path.join(dir, "train_auc.log"))[:, -1].mean()
-    test_auc = loadFile(os.path.join(dir, "test_auc.log"))[:, -1].mean()
+    train_acc = loadFile(os.path.join(dir, "train_acc.log"))[:, -1]
+    test_acc = loadFile(os.path.join(dir, "test_acc.log"))[:, -1]
+    train_auc = loadFile(os.path.join(dir, "train_auc.log"))[:, -1]
+    test_auc = loadFile(os.path.join(dir, "test_auc.log"))[:, -1]
     return train_acc, test_acc, train_auc, test_auc
 
 
@@ -26,12 +26,11 @@ for dir in dirlist:
     if (not os.path.isdir(dir)):
         continue
     train_acc, test_acc, train_auc, test_auc = loadLog(dir)
-    output = f"{dir}, train_acc={train_acc:.4f}, train_auc={train_auc:.4f}, test_acc={test_acc:.4f}, test_auc={test_auc:.4f}"
-    output = output.replace("_size=480_step=180_rho=0.100000_", " Dynamic ")
-    output = output.replace("_size=4800_step=4800_rho=0.100000_", " Static ")
-    output = output.replace("_epochs=64_num_iter=150_", " ")
-    output = output.replace("_", " ")
-    print(output)
+    fix = dir.replace("_size=480_step=180_rho=0.100000_", " Dynamic ").replace("_size=4800_step=4800_rho=0.100000_", " Static ").replace("_epochs=64_num_iter=150_", " ").replace("_", " ")
+    print(f"{fix}, train_acc min={train_acc.min():.4f}, train_auc min={train_auc.min():.4f}, test_acc min={test_acc.min():.4f}, test_auc min={test_auc.min():.4f}")
+    print(f"{fix}, train_acc mean={train_acc.mean():.4f}, train_auc mean={train_auc.mean():.4f}, test_acc mean={test_acc.mean():.4f}, test_auc mean={test_auc.mean():.4f}")
+    print(f"{fix}, train_acc max={train_acc.max():.4f}, train_auc max={train_auc.max():.4f}, test_acc max={test_acc.max():.4f}, test_auc max={test_auc.max():.4f}")
+
 
 for channel in [1, 2, 4]:
     for dropout in [0.0, 0.1]:
@@ -42,18 +41,18 @@ for channel in [1, 2, 4]:
         for size, step in [(4800, 4800), (480, 180)]:
             for node in [15, 25, 50]:
                 train_acc, test_acc, train_auc, test_auc = loadLog(f"conv2d_node={node}_size={size}_step={step}_rho=0.100000_dropout={dropout}_epochs=64_num_iter=150_lr=0.001_channel={channel}")
-                train_acc_list.append(train_acc)
-                test_acc_list.append(test_acc)
-                train_auc_list.append(train_auc)
-                test_auc_list.append(test_auc)
+                train_acc_list.append(train_acc.mean())
+                test_acc_list.append(test_acc.mean())
+                train_auc_list.append(train_auc.mean())
+                test_auc_list.append(test_auc.mean())
 
         for size, step in [(480, 180)]:
             for node in [15, 25, 50]:
                 train_acc, test_acc, train_auc, test_auc = loadLog(f"conv2d_node={node}_size={size}_step={step}_rho=0.100000_dropout={dropout}_epochs=64_num_iter=150_lr=0.001_choose_channel={channel}")
-                train_acc_list.append(train_acc)
-                test_acc_list.append(test_acc)
-                train_auc_list.append(train_auc)
-                test_auc_list.append(test_auc)
+                train_acc_list.append(train_acc.mean())
+                test_acc_list.append(test_acc.mean())
+                train_auc_list.append(train_auc.mean())
+                test_auc_list.append(test_auc.mean())
 
         pyplot.clf()
         pyplot.figure(figsize=(10, 3))

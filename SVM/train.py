@@ -1,7 +1,6 @@
 import os
 import pandas as pd
 import argparse
-from tqdm import tqdm
 import random
 import numpy as np
 from sklearn.metrics import roc_auc_score, accuracy_score
@@ -76,6 +75,8 @@ def train(args):
     train_auc = roc_auc_score(train_y, train_pred_y)
     test_auc = roc_auc_score(test_y, test_pred_y)
 
+    print(f"train acc={train_acc}, test acc={test_acc}, train auc={train_auc}, test auc={test_auc}", file=flog)
+
     train_acc_list.append(train_acc)
     test_acc_list.append(test_acc)
     train_auc_list.append(train_auc)
@@ -101,7 +102,7 @@ if __name__ == "__main__":
     flog = open(args.output, "w")
     print(args, file=flog)
 
-    for seed in tqdm(range(0, args.num_iter), file=flog):
+    for seed in range(0, args.num_iter):
         args.seed = seed
         init(args)
         train(args)

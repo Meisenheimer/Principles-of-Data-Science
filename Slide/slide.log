@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.8.5)  13 NOV 2024 22:32
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.8.5)  20 NOV 2024 10:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1663,14 +1663,12 @@ File: ./figure/method.png Graphic file (type bmp)
  [15
 
 ]
-File: ../output_1/bar_channel=4_dropout=0.1.jpg Graphic file (type bmp)
-<../output_1/bar_channel=4_dropout=0.1.jpg>
-File: ../output_1/test_acc_box_channel=4_dropout=0.1.jpg Graphic file (type bmp
-)
-<../output_1/test_acc_box_channel=4_dropout=0.1.jpg>
-File: ../output_1/test_auc_box_channel=4_dropout=0.1.jpg Graphic file (type bmp
-)
-<../output_1/test_auc_box_channel=4_dropout=0.1.jpg>
+File: ../Result/bar_channel=4_dropout=0.1.jpg Graphic file (type bmp)
+<../Result/bar_channel=4_dropout=0.1.jpg>
+File: ../Result/test_acc_box_channel=4_dropout=0.1.jpg Graphic file (type bmp)
+<../Result/test_acc_box_channel=4_dropout=0.1.jpg>
+File: ../Result/test_auc_box_channel=4_dropout=0.1.jpg Graphic file (type bmp)
+<../Result/test_auc_box_channel=4_dropout=0.1.jpg>
 
 Overfull \vbox (0.16765pt too high) detected at line 369
  []
@@ -1842,70 +1840,93 @@ File: beamericonarticle.pdf Graphic file (type pdf)
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 684.
+(hyperref)                removing `\translate ' on input line 685.
 
 [31
 
 ] [32
 
-] [33
+]
+File: ../SVM/acc_linear_0.1.jpg Graphic file (type bmp)
+<../SVM/acc_linear_0.1.jpg>
+File: ../SVM/auc_linear_0.1.jpg Graphic file (type bmp)
+<../SVM/auc_linear_0.1.jpg>
+File: ../SVM/acc_nu_0.1.jpg Graphic file (type bmp)
+<../SVM/acc_nu_0.1.jpg>
+File: ../SVM/auc_nu_0.1.jpg Graphic file (type bmp)
+<../SVM/auc_nu_0.1.jpg>
+
+Overfull \vbox (1.0433pt too high) detected at line 747
+ []
+
+[33
 
 ]
-File: ../output_1/test_acc_box_channel=1_dropout=0.0.jpg Graphic file (type bmp
-)
-<../output_1/test_acc_box_channel=1_dropout=0.0.jpg>
-File: ../output_1/test_auc_box_channel=1_dropout=0.0.jpg Graphic file (type bmp
-)
-<../output_1/test_auc_box_channel=1_dropout=0.0.jpg>
-File: ../output_1/test_acc_box_channel=1_dropout=0.1.jpg Graphic file (type bmp
-)
-<../output_1/test_acc_box_channel=1_dropout=0.1.jpg>
-File: ../output_1/test_auc_box_channel=1_dropout=0.1.jpg Graphic file (type bmp
-)
-<../output_1/test_auc_box_channel=1_dropout=0.1.jpg>
-
-Overfull \vbox (1.0433pt too high) detected at line 811
+Overfull \vbox (0.93333pt too high) detected at line 785
  []
 
 [34
 
 ]
-File: ../output_1/test_acc_box_channel=2_dropout=0.0.jpg Graphic file (type bmp
-)
-<../output_1/test_acc_box_channel=2_dropout=0.0.jpg>
-File: ../output_1/test_auc_box_channel=2_dropout=0.0.jpg Graphic file (type bmp
-)
-<../output_1/test_auc_box_channel=2_dropout=0.0.jpg>
-File: ../output_1/test_acc_box_channel=2_dropout=0.1.jpg Graphic file (type bmp
-)
-<../output_1/test_acc_box_channel=2_dropout=0.1.jpg>
-File: ../output_1/test_auc_box_channel=2_dropout=0.1.jpg Graphic file (type bmp
-)
-<../output_1/test_auc_box_channel=2_dropout=0.1.jpg>
-
-Overfull \vbox (1.0433pt too high) detected at line 824
+Overfull \vbox (0.93333pt too high) detected at line 823
  []
 
 [35
 
 ]
-File: ../output_1/test_acc_box_channel=4_dropout=0.0.jpg Graphic file (type bmp
-)
-<../output_1/test_acc_box_channel=4_dropout=0.0.jpg>
-File: ../output_1/test_auc_box_channel=4_dropout=0.0.jpg Graphic file (type bmp
-)
-<../output_1/test_auc_box_channel=4_dropout=0.0.jpg>
-File: ../output_1/test_acc_box_channel=4_dropout=0.1.jpg Graphic file (type bmp
-)
-<../output_1/test_acc_box_channel=4_dropout=0.1.jpg>
-File: ../output_1/test_auc_box_channel=4_dropout=0.1.jpg Graphic file (type bmp
-)
-<../output_1/test_auc_box_channel=4_dropout=0.1.jpg>
-
-Overfull \vbox (1.0433pt too high) detected at line 837
+Overfull \vbox (0.93333pt too high) detected at line 861
  []
 
 [36
+
+]
+File: ../Result/test_acc_box_channel=1_dropout=0.0.jpg Graphic file (type bmp)
+<../Result/test_acc_box_channel=1_dropout=0.0.jpg>
+File: ../Result/test_auc_box_channel=1_dropout=0.0.jpg Graphic file (type bmp)
+<../Result/test_auc_box_channel=1_dropout=0.0.jpg>
+File: ../Result/test_acc_box_channel=1_dropout=0.1.jpg Graphic file (type bmp)
+<../Result/test_acc_box_channel=1_dropout=0.1.jpg>
+File: ../Result/test_auc_box_channel=1_dropout=0.1.jpg Graphic file (type bmp)
+<../Result/test_auc_box_channel=1_dropout=0.1.jpg>
+
+Overfull \vbox (1.0433pt too high) detected at line 874
+ []
+
+[37
+
+]
+File: ../Result/test_acc_box_channel=2_dropout=0.0.jpg Graphic file (type bmp)
+<../Result/test_acc_box_channel=2_dropout=0.0.jpg>
+File: ../Result/test_auc_box_channel=2_dropout=0.0.jpg Graphic file (type bmp)
+<../Result/test_auc_box_channel=2_dropout=0.0.jpg>
+File: ../Result/test_acc_box_channel=2_dropout=0.1.jpg Graphic file (type bmp)
+<../Result/test_acc_box_channel=2_dropout=0.1.jpg>
+File: ../Result/test_auc_box_channel=2_dropout=0.1.jpg Graphic file (type bmp)
+<../Result/test_auc_box_channel=2_dropout=0.1.jpg>
+
+Overfull \vbox (1.0433pt too high) detected at line 887
+ []
+
+[38
+
+]
+File: ../Result/test_acc_box_channel=4_dropout=0.0.jpg Graphic file (type bmp)
+<../Result/test_acc_box_channel=4_dropout=0.0.jpg>
+File: ../Result/test_auc_box_channel=4_dropout=0.0.jpg Graphic file (type bmp)
+<../Result/test_auc_box_channel=4_dropout=0.0.jpg>
+File: ../Result/test_acc_box_channel=4_dropout=0.1.jpg Graphic file (type bmp)
+<../Result/test_acc_box_channel=4_dropout=0.1.jpg>
+File: ../Result/test_auc_box_channel=4_dropout=0.1.jpg Graphic file (type bmp)
+<../Result/test_auc_box_channel=4_dropout=0.1.jpg>
+
+Overfull \vbox (1.0433pt too high) detected at line 900
+ []
+
+[39
+
+] [40
+
+] [41
 
 ]
 \tf@nav=\write7
@@ -1929,12 +1950,12 @@ Package logreq Info: Writing requests to 'slide.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37201 strings out of 475845
- 759964 string characters out of 5781365
- 1933879 words of memory out of 5000000
- 57572 multiletter control sequences out of 15000+600000
+ 37252 strings out of 475845
+ 760991 string characters out of 5781365
+ 1937879 words of memory out of 5000000
+ 57619 multiletter control sequences out of 15000+600000
  569000 words of font info for 104 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,15n,123p,1879b,5446s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on slide.pdf (36 pages).
+Output written on slide.pdf (41 pages).

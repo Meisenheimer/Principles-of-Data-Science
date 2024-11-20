@@ -117,7 +117,7 @@
             \\
             \hline
         \end{tabular}
-        \caption{The models and results of previous papers using static functional connectivity (sFC).}
+        \caption{The models and results of previous papers using static functional connectivity (sFC) to predict gender.}
     \end{table}
 
 \end{frame}
@@ -142,7 +142,7 @@
             Random forest\footfullcite{Sen2021-ws} & ACC: $0.94$                               \\
             \hline
         \end{tabular}
-        \caption{The models and results of previous papers using dynamic functional connectivity (dFC).}
+        \caption{The models and results of previous papers using dynamic functional connectivity (dFC) to predict gender.}
     \end{table}
 
 \end{frame}
@@ -359,9 +359,9 @@
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.8\textwidth]{../output_1/bar_channel=4_dropout=0.1.jpg} \\
-        \subfloat[test ACC]{\includegraphics[width=0.4\textwidth]{../output_1/test_acc_box_channel=4_dropout=0.1.jpg}}
-        \subfloat[test AUC]{\includegraphics[width=0.4\textwidth]{../output_1/test_auc_box_channel=4_dropout=0.1.jpg}}
+        \includegraphics[width=0.8\textwidth]{../Result/bar_channel=4_dropout=0.1.jpg} \\
+        \subfloat[test ACC]{\includegraphics[width=0.4\textwidth]{../Result/test_acc_box_channel=4_dropout=0.1.jpg}}
+        \subfloat[test AUC]{\includegraphics[width=0.4\textwidth]{../Result/test_auc_box_channel=4_dropout=0.1.jpg}}
         \caption{Results of CNN model with dropout = 0.1 and channel = 4.}
         % \label{CNN-results-3}
     \end{figure}
@@ -670,7 +670,8 @@
     \begin{itemize}
         \item Choose a more reasonable size and step of the window via Fourier analysis, wavelet analysis, etc;
         \item Force the coefficient of CNN to be orthogonal;
-        \item Use some simple nonlinear classifier (i.e. quadratic classifier).
+        \item Use some simple nonlinear classifier (i.e. quadratic classifier);
+        \item Use effective connectivity as input.
     \end{itemize}
 
 \end{frame}
@@ -683,37 +684,99 @@
 \appendix
 
 \section{Ablation study}
-\begin{frame}{Ablation study}
+
+\begin{frame}{Ablation study - SVM}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            Node & Data & min ACC/AUC       & mean ACC/AUC      & max ACC/AUC       \\
+            \hline
+            $15$ & sFC  & $0.7363$/$0.7369$ & $0.8083$/$0.8078$ & $0.8706$/$0.8756$ \\
+            \hline
+            $25$ & sFC  & $0.8060$/$0.8059$ & $0.8714$/$0.8708$ & $0.9204$/$0.9202$ \\
+            \hline
+            $50$ & sFC  & $0.8905$/$0.8905$ & $0.9357$/$0.9357$ & $0.9751$/$0.9749$ \\
+            \hline
+            $15$ & dFC  & $0.6866$/$0.6919$ & $0.7746$/$0.7733$ & $0.8507$/$0.8534$ \\
+            \hline
+            $25$ & dFC  & $0.7861$/$0.7874$ & $0.8739$/$0.8730$ & $0.9204$/$0.9206$ \\
+            \hline
+            $50$ & dFC  & $0.8806$/$0.8813$ & $0.9295$/$0.9300$ & $0.9652$/$0.9666$ \\
+            \hline
+        \end{tabular}
+        \caption{Ablation study for LinearSVM.}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Ablation study - SVM}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            Node & Data & min ACC/AUC       & mean ACC/AUC      & max ACC/AUC       \\
+            \hline
+            $15$ & sFC  & $0.7562$/$0.7571$ & $0.8221$/$0.8219$ & $0.8856$/$0.8847$ \\
+            \hline
+            $25$ & sFC  & $0.8259$/$0.8257$ & $0.8791$/$0.8782$ & $0.9303$/$0.9302$ \\
+            \hline
+            $50$ & sFC  & $0.8458$/$0.8458$ & $0.9191$/$0.9194$ & $0.9602$/$0.9608$ \\
+            \hline
+            $15$ & dFC  & $0.7313$/$0.7324$ & $0.8066$/$0.8056$ & $0.8706$/$0.8674$ \\
+            \hline
+            $25$ & dFC  & $0.8109$/$0.8121$ & $0.8811$/$0.8802$ & $0.9303$/$0.9296$ \\
+            \hline
+            $50$ & dFC  & $0.8308$/$0.8300$ & $0.9021$/$0.9022$ & $0.9552$/$0.9579$ \\
+            \hline
+        \end{tabular}
+        \caption{Ablation study for NuSVM.}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Ablation study - SVM}
+
+    \begin{figure}[H]
+        \subfloat[test ACC for LinearSVM]{\includegraphics[width=0.4\textwidth]{../SVM/acc_linear_0.1.jpg}}
+        \subfloat[test AUC for LinearSVM]{\includegraphics[width=0.4\textwidth]{../SVM/auc_linear_0.1.jpg}} \\
+        \subfloat[test ACC for NuSVM]{\includegraphics[width=0.4\textwidth]{../SVM/acc_nu_0.1.jpg}}
+        \subfloat[test AUC for NuSVM]{\includegraphics[width=0.4\textwidth]{../SVM/auc_nu_0.1.jpg}} \\
+        \caption{Results of SVM.}
+        % \label{CNN-results-3}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}{Ablation study - CNN}
 
     \begin{table}[H]
         \centering
-        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|c|}
             \hline
-            Data & Dropout & Channel & train ACC/AUC     & test ACC/AUC      \\
+            Data & DR    & CH  & min ACC/AUC       & mean ACC/AUC      & max ACC/AUC       \\
             \hline
-            sFC  & $0.0$   & $1$     & $0.8605$/$0.9230$ & $0.7892$/$0.8804$ \\
+            sFC  & $0.0$ & $1$ & $0.5224$/$0.8108$ & $0.7957$/$0.8855$ & $0.8706$/$0.9307$ \\
             \hline
-            sFC  & $0.0$   & $2$     & $0.8837$/$0.9459$ & $0.7972$/$0.8847$ \\
+            sFC  & $0.0$ & $2$ & $0.7164$/$0.8273$ & $0.8001$/$0.8876$ & $0.8756$/$0.9281$ \\
             \hline
-            sFC  & $0.0$   & $4$     & $0.9070$/$0.9644$ & $0.7956$/$0.8820$ \\
+            sFC  & $0.0$ & $4$ & $0.7363$/$0.8189$ & $0.7988$/$0.8863$ & $0.8607$/$0.9337$ \\
             \hline
-            sFC  & $0.1$   & $1$     & $0.7975$/$0.8609$ & $0.7971$/$0.8874$ \\
+            sFC  & $0.1$ & $1$ & $0.5174$/$0.8041$ & $0.7952$/$0.8870$ & $0.8756$/$0.9355$ \\
             \hline
-            sFC  & $0.1$   & $2$     & $0.8217$/$0.9054$ & $0.7975$/$0.8871$ \\
+            sFC  & $0.1$ & $2$ & $0.7164$/$0.8318$ & $0.7986$/$0.8885$ & $0.8756$/$0.9294$ \\
             \hline
-            sFC  & $0.1$   & $4$     & $0.8624$/$0.9395$ & $0.7993$/$0.8867$ \\
+            sFC  & $0.1$ & $4$ & $0.7313$/$0.8276$ & $0.8038$/$0.8911$ & $0.8607$/$0.9317$ \\
             \hline
-            dFC  & $0.0$   & $1$     & $0.9719$/$0.9830$ & $0.7755$/$0.8665$ \\
+            dFC  & $0.0$ & $1$ & $0.5871$/$0.7160$ & $0.7737$/$0.8670$ & $0.8557$/$0.9216$ \\
             \hline
-            dFC  & $0.0$   & $2$     & $0.9952$/$0.9977$ & $0.7791$/$0.8586$ \\
+            dFC  & $0.0$ & $2$ & $0.6915$/$0.7824$ & $0.7811$/$0.8630$ & $0.8507$/$0.9209$ \\
             \hline
-            dFC  & $0.0$   & $4$     & $0.9990$/$0.9997$ & $0.7783$/$0.8565$ \\
+            dFC  & $0.0$ & $4$ & $0.7015$/$0.8028$ & $0.7787$/$0.8584$ & $0.8408$/$0.9148$ \\
             \hline
-            dFC  & $0.1$   & $1$     & $0.9224$/$0.9650$ & $0.7773$/$0.8668$ \\
+            dFC  & $0.1$ & $1$ & $0.5522$/$0.7140$ & $0.7735$/$0.8656$ & $0.8458$/$0.9209$ \\
             \hline
-            dFC  & $0.1$   & $2$     & $0.9715$/$0.9933$ & $0.7778$/$0.8682$ \\
+            dFC  & $0.1$ & $2$ & $0.6617$/$0.7942$ & $0.7771$/$0.8692$ & $0.8408$/$0.9110$ \\
             \hline
-            dFC  & $0.1$   & $4$     & $0.9873$/$0.9988$ & $0.7790$/$0.8674$ \\
+            dFC  & $0.1$ & $4$ & $0.7164$/$0.7987$ & $0.7813$/$0.8666$ & $0.8408$/$0.9171$ \\
             \hline
         \end{tabular}
         \caption{Ablation study for $N_{node} = 15$.}
@@ -721,37 +784,37 @@
 
 \end{frame}
 
-\begin{frame}{Ablation study}
+\begin{frame}{Ablation study - CNN}
 
     \begin{table}[H]
         \centering
-        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|c|}
             \hline
-            Data & Dropout & Channel & train ACC/AUC     & test ACC/AUC      \\
+            Data & DR    & CH  & min ACC/AUC       & mean ACC/AUC      & max ACC/AUC       \\
             \hline
-            sFC  & $0.0$   & $1$     & $0.9539$/$0.9747$ & $0.8400$/$0.9220$ \\
+            sFC  & $0.0$ & $1$ & $0.5075$/$0.7475$ & $0.8462$/$0.9265$ & $0.9104$/$0.9634$ \\
             \hline
-            sFC  & $0.0$   & $2$     & $0.9913$/$0.9950$ & $0.8472$/$0.9230$ \\
+            sFC  & $0.0$ & $2$ & $0.7662$/$0.8731$ & $0.8470$/$0.9225$ & $0.9104$/$0.9599$ \\
             \hline
-            sFC  & $0.0$   & $4$     & $0.9959$/$0.9992$ & $0.8461$/$0.9207$ \\
+            sFC  & $0.0$ & $4$ & $0.7512$/$0.8650$ & $0.8468$/$0.9220$ & $0.9055$/$0.9603$ \\
             \hline
-            sFC  & $0.1$   & $1$     & $0.8760$/$0.9274$ & $0.8429$/$0.9277$ \\
+            sFC  & $0.1$ & $1$ & $0.5124$/$0.7431$ & $0.8547$/$0.9356$ & $0.9154$/$0.9688$ \\
             \hline
-            sFC  & $0.1$   & $2$     & $0.9202$/$0.9751$ & $0.8550$/$0.9334$ \\
+            sFC  & $0.1$ & $2$ & $0.7711$/$0.8598$ & $0.8581$/$0.9358$ & $0.9254$/$0.9728$ \\
             \hline
-            sFC  & $0.1$   & $4$     & $0.9507$/$0.9897$ & $0.8518$/$0.9327$ \\
+            sFC  & $0.1$ & $4$ & $0.7711$/$0.8730$ & $0.8562$/$0.9339$ & $0.9104$/$0.9638$ \\
             \hline
-            dFC  & $0.0$   & $1$     & $0.9923$/$0.9963$ & $0.8547$/$0.9419$ \\
+            dFC  & $0.0$ & $1$ & $0.6269$/$0.7168$ & $0.8450$/$0.9338$ & $0.9303$/$0.9788$ \\
             \hline
-            dFC  & $0.0$   & $2$     & $0.9991$/$0.9997$ & $0.8617$/$0.9413$ \\
+            dFC  & $0.0$ & $2$ & $0.7463$/$0.8662$ & $0.8594$/$0.9416$ & $0.9254$/$0.9787$ \\
             \hline
-            dFC  & $0.0$   & $4$     & $0.9964$/$0.9966$ & $0.8607$/$0.9383$ \\
+            dFC  & $0.0$ & $4$ & $0.7960$/$0.9130$ & $0.8672$/$0.9437$ & $0.9154$/$0.9783$ \\
             \hline
-            dFC  & $0.1$   & $1$     & $0.9365$/$0.9736$ & $0.8540$/$0.9392$ \\
+            dFC  & $0.1$ & $1$ & $0.5771$/$0.6996$ & $0.8391$/$0.9319$ & $0.9254$/$0.9753$ \\
             \hline
-            dFC  & $0.1$   & $2$     & $0.9900$/$0.9983$ & $0.8649$/$0.9429$ \\
+            dFC  & $0.1$ & $2$ & $0.7612$/$0.8584$ & $0.8618$/$0.9441$ & $0.9204$/$0.9752$ \\
             \hline
-            dFC  & $0.1$   & $4$     & $0.9954$/$0.9997$ & $0.8633$/$0.9425$ \\
+            dFC  & $0.1$ & $4$ & $0.7264$/$0.8902$ & $0.8606$/$0.9426$ & $0.9104$/$0.9739$ \\
             \hline
         \end{tabular}
         \caption{Ablation study for $N_{node} = 25$.}
@@ -759,37 +822,37 @@
 
 \end{frame}
 
-\begin{frame}{Ablation study}
+\begin{frame}{Ablation study - CNN}
 
     \begin{table}[H]
         \centering
-        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|c|}
             \hline
-            Data & Dropout & Channel & train ACC/AUC     & test ACC/AUC      \\
+            Data & DR    & CH  & min ACC/AUC       & mean ACC/AUC      & max ACC/AUC       \\
             \hline
-            sFC  & $0.0$   & $1$     & $0.9690$/$0.9882$ & $0.9003$/$0.9664$ \\
+            sFC  & $0.0$ & $1$ & $0.5572$/$0.7721$ & $0.9015$/$0.9689$ & $0.9602$/$0.9947$ \\
             \hline
-            sFC  & $0.0$   & $2$     & $0.9986$/$0.9994$ & $0.9229$/$0.9770$ \\
+            sFC  & $0.0$ & $2$ & $0.7512$/$0.8462$ & $0.9218$/$0.9762$ & $0.9701$/$0.9941$ \\
             \hline
-            sFC  & $0.0$   & $4$     & $1.0000$/$1.0000$ & $0.9245$/$0.9775$ \\
+            sFC  & $0.0$ & $4$ & $0.8856$/$0.9589$ & $0.9248$/$0.9779$ & $0.9602$/$0.9938$ \\
             \hline
-            sFC  & $0.1$   & $1$     & $0.9199$/$0.9656$ & $0.8979$/$0.9671$ \\
+            sFC  & $0.1$ & $1$ & $0.5124$/$0.7691$ & $0.8960$/$0.9684$ & $0.9652$/$0.9952$ \\
             \hline
-            sFC  & $0.1$   & $2$     & $0.9771$/$0.9967$ & $0.9165$/$0.9765$ \\
+            sFC  & $0.1$ & $2$ & $0.7363$/$0.8335$ & $0.9147$/$0.9746$ & $0.9652$/$0.9947$ \\
             \hline
-            sFC  & $0.1$   & $4$     & $0.9920$/$0.9995$ & $0.9178$/$0.9779$ \\
+            sFC  & $0.1$ & $4$ & $0.8358$/$0.9562$ & $0.9178$/$0.9778$ & $0.9652$/$0.9940$ \\
             \hline
-            dFC  & $0.0$   & $1$     & $0.9937$/$0.9982$ & $0.8726$/$0.9670$ \\
+            dFC  & $0.0$ & $1$ & $0.6766$/$0.8767$ & $0.8799$/$0.9689$ & $0.9552$/$0.9924$ \\
             \hline
-            dFC  & $0.0$   & $2$     & $0.9995$/$0.9998$ & $0.9007$/$0.9702$ \\
+            dFC  & $0.0$ & $2$ & $0.7711$/$0.9366$ & $0.9041$/$0.9733$ & $0.9552$/$0.9917$ \\
             \hline
-            dFC  & $0.0$   & $4$     & $1.0000$/$1.0000$ & $0.9089$/$0.9753$ \\
+            dFC  & $0.0$ & $4$ & $0.8507$/$0.9543$ & $0.9122$/$0.9766$ & $0.9602$/$0.9946$ \\
             \hline
-            dFC  & $0.1$   & $1$     & $0.9493$/$0.9824$ & $0.8910$/$0.9718$ \\
+            dFC  & $0.1$ & $1$ & $0.7363$/$0.8511$ & $0.8945$/$0.9714$ & $0.9602$/$0.9940$ \\
             \hline
-            dFC  & $0.1$   & $2$     & $0.9922$/$0.9992$ & $0.9032$/$0.9703$ \\
+            dFC  & $0.1$ & $2$ & $0.8109$/$0.8966$ & $0.9027$/$0.9716$ & $0.9552$/$0.9925$ \\
             \hline
-            dFC  & $0.1$   & $4$     & $0.9979$/$0.9998$ & $0.9004$/$0.9698$ \\
+            dFC  & $0.1$ & $4$ & $0.7711$/$0.9128$ & $0.9040$/$0.9713$ & $0.9552$/$0.9930$ \\
             \hline
         \end{tabular}
         \caption{Ablation study for $N_{node} = 50$.}
@@ -797,42 +860,81 @@
 
 \end{frame}
 
-\begin{frame}{Ablation study}
+\begin{frame}{Ablation study - CNN}
 
     \begin{figure}[H]
-        \subfloat[test ACC with dropout=0.0]{\includegraphics[width=0.4\textwidth]{../output_1/test_acc_box_channel=1_dropout=0.0.jpg}}
-        \subfloat[test AUC with dropout=0.0]{\includegraphics[width=0.4\textwidth]{../output_1/test_auc_box_channel=1_dropout=0.0.jpg}} \\
-        \subfloat[test ACC with dropout=0.1]{\includegraphics[width=0.4\textwidth]{../output_1/test_acc_box_channel=1_dropout=0.1.jpg}}
-        \subfloat[test AUC with dropout=0.1]{\includegraphics[width=0.4\textwidth]{../output_1/test_auc_box_channel=1_dropout=0.1.jpg}}
+        \subfloat[test ACC with dropout=0.0]{\includegraphics[width=0.4\textwidth]{../Result/test_acc_box_channel=1_dropout=0.0.jpg}}
+        \subfloat[test AUC with dropout=0.0]{\includegraphics[width=0.4\textwidth]{../Result/test_auc_box_channel=1_dropout=0.0.jpg}} \\
+        \subfloat[test ACC with dropout=0.1]{\includegraphics[width=0.4\textwidth]{../Result/test_acc_box_channel=1_dropout=0.1.jpg}}
+        \subfloat[test AUC with dropout=0.1]{\includegraphics[width=0.4\textwidth]{../Result/test_auc_box_channel=1_dropout=0.1.jpg}}
         \caption{Results of CNN model with channel = 1.}
         % \label{CNN-results-3}
     \end{figure}
 
 \end{frame}
 
-\begin{frame}{Ablation study}
+\begin{frame}{Ablation study - CNN}
 
     \begin{figure}[H]
-        \subfloat[test ACC with dropout=0.0]{\includegraphics[width=0.4\textwidth]{../output_1/test_acc_box_channel=2_dropout=0.0.jpg}}
-        \subfloat[test AUC with dropout=0.0]{\includegraphics[width=0.4\textwidth]{../output_1/test_auc_box_channel=2_dropout=0.0.jpg}} \\
-        \subfloat[test ACC with dropout=0.1]{\includegraphics[width=0.4\textwidth]{../output_1/test_acc_box_channel=2_dropout=0.1.jpg}}
-        \subfloat[test AUC with dropout=0.1]{\includegraphics[width=0.4\textwidth]{../output_1/test_auc_box_channel=2_dropout=0.1.jpg}}
+        \subfloat[test ACC with dropout=0.0]{\includegraphics[width=0.4\textwidth]{../Result/test_acc_box_channel=2_dropout=0.0.jpg}}
+        \subfloat[test AUC with dropout=0.0]{\includegraphics[width=0.4\textwidth]{../Result/test_auc_box_channel=2_dropout=0.0.jpg}} \\
+        \subfloat[test ACC with dropout=0.1]{\includegraphics[width=0.4\textwidth]{../Result/test_acc_box_channel=2_dropout=0.1.jpg}}
+        \subfloat[test AUC with dropout=0.1]{\includegraphics[width=0.4\textwidth]{../Result/test_auc_box_channel=2_dropout=0.1.jpg}}
         \caption{Results of CNN model with channel = 2.}
         % \label{CNN-results-3}
     \end{figure}
 
 \end{frame}
 
-\begin{frame}{Ablation study}
+\begin{frame}{Ablation study - CNN}
 
     \begin{figure}[H]
-        \subfloat[test ACC with dropout=0.0]{\includegraphics[width=0.4\textwidth]{../output_1/test_acc_box_channel=4_dropout=0.0.jpg}}
-        \subfloat[test AUC with dropout=0.0]{\includegraphics[width=0.4\textwidth]{../output_1/test_auc_box_channel=4_dropout=0.0.jpg}} \\
-        \subfloat[test ACC with dropout=0.1]{\includegraphics[width=0.4\textwidth]{../output_1/test_acc_box_channel=4_dropout=0.1.jpg}}
-        \subfloat[test AUC with dropout=0.1]{\includegraphics[width=0.4\textwidth]{../output_1/test_auc_box_channel=4_dropout=0.1.jpg}}
+        \subfloat[test ACC with dropout=0.0]{\includegraphics[width=0.4\textwidth]{../Result/test_acc_box_channel=4_dropout=0.0.jpg}}
+        \subfloat[test AUC with dropout=0.0]{\includegraphics[width=0.4\textwidth]{../Result/test_auc_box_channel=4_dropout=0.0.jpg}} \\
+        \subfloat[test ACC with dropout=0.1]{\includegraphics[width=0.4\textwidth]{../Result/test_acc_box_channel=4_dropout=0.1.jpg}}
+        \subfloat[test AUC with dropout=0.1]{\includegraphics[width=0.4\textwidth]{../Result/test_auc_box_channel=4_dropout=0.1.jpg}}
         \caption{Results of CNN model with channel = 4.}
         % \label{CNN-results-3}
     \end{figure}
+
+\end{frame}
+
+\begin{frame}{Ablation study - Repeat time}
+
+    Assume that the results (AUC or ACC) $\{X_i\}_{i=1}^n$ for different test are iid with mean value $\mu$ and variance $\sigma^2$, then from central limit theorem
+
+    $$
+        Y_n = \frac{\sum_{i=1}^n X_i - n \mu}{\sqrt{n} \sigma} \xrightarrow{D} N(0, 1).
+    $$
+
+    Thus for all $\varepsilon > 0$,
+
+    $$
+        P\left(\vert \bar{X}_i - mu \vert \leq \frac{\sigma \varepsilon}{\sqrt{n}}\right) = P(\vert Y_n - E(Y_n) \vert \leq \varepsilon) = \varPhi(\varepsilon) - \varPhi(-\varepsilon),
+    $$
+
+    where $\varPhi(x)$ is the cumulative distribution function of the standard normal distribution.
+
+\end{frame}
+
+\begin{frame}{Ablation study - Repeat time}
+
+    We compute the variance of samples $\sigma \leq \sqrt{0.007} \leq 0.1$, which implies that if choose $\varepsilon = \sqrt{n} / \delta$, then
+
+    $$
+        P\left(\vert (\bar{X}_i - mu)\vert \leq \frac{0.1}{\delta}\right) \geq P\left(\vert \bar{X}_i - mu \vert \leq \frac{\sigma}{\delta}\right) = \varPhi\left(\frac{\sqrt{n}}{\delta}\right) - \varPhi\left(-\frac{\sqrt{n}}{\delta}\right).
+    $$
+
+    For $n = 150$,
+
+    \begin{itemize}
+        \item When choose $\delta = 5$, $P(\vert \bar{X}_i - mu \vert \leq 0.02) \geq 0.9857$;
+        \item When choose $\delta = 8$, $P(\vert \bar{X}_i - mu \vert \leq 0.0125) \geq 0.8742$;
+        \item When choose $\delta = 10$, $P(\vert \bar{X}_i - mu \vert \leq 0.01) \geq 0.7793$;
+        \item When choose $\delta = 12.5$, $P(\vert \bar{X}_i - mu \vert \leq 0.008) \geq 0.6728$;
+        \item When choose $\delta = 16$, $P(\vert \bar{X}_i - mu \vert \leq 0.00625) \geq 0.5560$;
+        \item When choose $\delta = 20$, $P(\vert \bar{X}_i - mu \vert \leq 0.005) \geq 0.4597$.
+    \end{itemize}
 
 \end{frame}
 
