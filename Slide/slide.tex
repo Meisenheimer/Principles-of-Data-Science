@@ -910,7 +910,7 @@
     Thus for all $\varepsilon > 0$,
 
     $$
-        P\left(\vert \bar{X}_i - mu \vert \leq \frac{\sigma \varepsilon}{\sqrt{n}}\right) = P(\vert Y_n - E(Y_n) \vert \leq \varepsilon) = \varPhi(\varepsilon) - \varPhi(-\varepsilon),
+        P\left(\vert \bar{X}_i - \mu \vert \leq \frac{\sigma \varepsilon}{\sqrt{n}}\right) = P(\vert Y_n - E(Y_n) \vert \leq \varepsilon) = \varPhi(\varepsilon) - \varPhi(-\varepsilon),
     $$
 
     where $\varPhi(x)$ is the cumulative distribution function of the standard normal distribution.
@@ -922,18 +922,18 @@
     We compute the variance of samples $\sigma \leq \sqrt{0.007} \leq 0.1$, which implies that if choose $\varepsilon = \sqrt{n} / \delta$, then
 
     $$
-        P\left(\vert (\bar{X}_i - mu)\vert \leq \frac{0.1}{\delta}\right) \geq P\left(\vert \bar{X}_i - mu \vert \leq \frac{\sigma}{\delta}\right) = \varPhi\left(\frac{\sqrt{n}}{\delta}\right) - \varPhi\left(-\frac{\sqrt{n}}{\delta}\right).
+        P\left(\vert (\bar{X}_i - \mu)\vert \leq \frac{0.1}{\delta}\right) \geq P\left(\vert \bar{X}_i - \mu \vert \leq \frac{\sigma}{\delta}\right) = \varPhi\left(\frac{\sqrt{n}}{\delta}\right) - \varPhi\left(-\frac{\sqrt{n}}{\delta}\right).
     $$
 
     For $n = 150$,
 
     \begin{itemize}
-        \item When choose $\delta = 5$, $P(\vert \bar{X}_i - mu \vert \leq 0.02) \geq 0.9857$;
-        \item When choose $\delta = 8$, $P(\vert \bar{X}_i - mu \vert \leq 0.0125) \geq 0.8742$;
-        \item When choose $\delta = 10$, $P(\vert \bar{X}_i - mu \vert \leq 0.01) \geq 0.7793$;
-        \item When choose $\delta = 12.5$, $P(\vert \bar{X}_i - mu \vert \leq 0.008) \geq 0.6728$;
-        \item When choose $\delta = 16$, $P(\vert \bar{X}_i - mu \vert \leq 0.00625) \geq 0.5560$;
-        \item When choose $\delta = 20$, $P(\vert \bar{X}_i - mu \vert \leq 0.005) \geq 0.4597$.
+        \item When choose $\delta = 5$, $P(\vert \bar{X}_i - \mu \vert \leq 0.02) \geq 0.9857$;
+        \item When choose $\delta = 8$, $P(\vert \bar{X}_i - \mu \vert \leq 0.0125) \geq 0.8742$;
+        \item When choose $\delta = 10$, $P(\vert \bar{X}_i - \mu \vert \leq 0.01) \geq 0.7793$;
+        \item When choose $\delta = 12.5$, $P(\vert \bar{X}_i - \mu \vert \leq 0.008) \geq 0.6728$;
+        \item When choose $\delta = 16$, $P(\vert \bar{X}_i - \mu \vert \leq 0.00625) \geq 0.5560$;
+        \item When choose $\delta = 20$, $P(\vert \bar{X}_i - \mu \vert \leq 0.005) \geq 0.4597$.
     \end{itemize}
 
 \end{frame}
