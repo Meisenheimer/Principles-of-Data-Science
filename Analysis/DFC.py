@@ -46,4 +46,10 @@ if __name__ == "__main__":
             pyplot.colorbar()
             pyplot.savefig(os.path.join(figure_output, "c_%d.jpg" % t), dpi=720, bbox_inches="tight")
 
+        for t in tqdm([0, 6, 12, 18, 24]):
+            pyplot.clf()
+            pyplot.grid()
+            pyplot.imshow(makeMat(node, fc[t] - fc.mean(0)), vmin=-0.3, vmax=0.3)
+            pyplot.savefig(os.path.join(figure_output, "n_c_%d.jpg" % t), dpi=720, bbox_inches="tight")
+
     flog.close()
