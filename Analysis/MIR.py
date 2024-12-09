@@ -69,21 +69,21 @@ if __name__ == "__main__":
         mean += tmp
         m = makeMatrix(tmp, args)
 
-        pyplot.clf()
-        pyplot.grid()
-        pyplot.imshow(m)
-        pyplot.colorbar()
-        pyplot.savefig(os.path.join(args.output, f"heatmap_{t}.jpg"), dpi=720, bbox_inches="tight")
+        # pyplot.clf()
+        # pyplot.grid()
+        # pyplot.imshow(m)
+        # pyplot.colorbar()
+        # pyplot.savefig(os.path.join(args.output, f"heatmap_{t}.jpg"), dpi=720, bbox_inches="tight")
 
-        for i in np.abs(tmp).argsort()[-len(tmp) // 10:]:
-            print("(%d, %d)" % index[i], file=flog, end=" ")
-        print("", file=flog)
+        # for i in np.abs(tmp).argsort()[-len(tmp) // 10:]:
+        #     print("(%d, %d)" % index[i], file=flog, end=" ")
+        # print("", file=flog)
 
-        for i in range(args.node):
-            for j in range(args.node):
-                print("%5.2f" % m[i][j], file=flog, end=" ")
-            print("", file=flog)
-        print("", file=flog)
+        # for i in range(args.node):
+        #     for j in range(args.node):
+        #         print("%5.2f" % m[i][j], file=flog, end=" ")
+        #     print("", file=flog)
+        # print("", file=flog)
 
     mean /= args.input_size
 
@@ -104,5 +104,9 @@ if __name__ == "__main__":
         for j in range(args.node):
             print("%5.2f" % mean[i][j], file=flog, end=" ")
         print("", file=flog)
+
+    for i in range(args.node):
+        print("%d: %5.2f" % (i, sum(np.abs(mean[i, :]))), file=flog)
+    print("", file=flog)
 
     flog.close()

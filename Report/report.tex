@@ -92,8 +92,11 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 \maketitle
 
 \begin{abstract}
-
+    Gender difference in the brain has been an important research direction in neuroscience, and in recent years there are a large number of existing studies about gender classification based on machine learning methods and functional brain networks. However, most of these models are highly nonlinear (e.g. RNN), which leads to a poor explainability. For this reason, we designed and implemented a model based on multiple hyperplanes, which can reach a higher explainability, based on SVM, CNN and other algorithms. We tested the model with functional brain network data computed from the Human Connectome Project (HCP) dataset. The results show that our method can also achieve similar or even higher accuracy and AUC. Meanwhile, based on the obtained model and the existing studies on brain region in neuroscience, we found that the gender differences of the resting state functional brain networks are mainly reflected in the frontal lobe and parietal lobe.
+    \\\\
+    \textbf{Keywords:} resting-state fMRI, gender, classification, machine learning, deep learning, human connectome project.
 \end{abstract}
+
 
 \newpage
 
@@ -105,7 +108,7 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 
 \section{Introduction}
 
-\subsection{Gender differences in functional connectivity}
+\subsection{Gender differences in functional connectivity\cite{Gong2009-gu}\cite{Dibaji2023-bn}\cite{Ebel2023-pu}\cite{Sendi2023-nu}\cite{Yan2019-yc}}
 
 As certain forms of psychopathology, such as autism and depression, differ in prevalence across gender, understanding gender differences in the neurotypical brain (NEB) may provide insight into risk and protective factors. It has been shown that functional connectivity (FC) features in the default mode network (DMN), frontoparietal and sensorimotor networks contribute most to the prediction of sex. In the default mode network, the right fusiform gyrus and the right ventral medial prefrontal cortex are important contributing regions. These regions have previously been implicated in multiple aspects of social functioning, suggesting that there may be sex differences in social cognition mediated by the DMN. The findings suggest that sex can be reliably predicted using resting-state functional magnetic resonance imaging (rfMRI) data and highlight the importance of controlling for sex variables in brain imaging studies.
 
@@ -121,15 +124,15 @@ Based on these previous study, we consider to use both dynamic and static functi
     \centering
     \begin{tabular}{|c|c|c|c|}
         \hline
-        Model & Result                                         \\
+        Model                     & Result                                         \\
         \hline
-        SVM   & \makecell{across sample AUC: $0.718 (\pm 0.2)$ \\  within sample AUC: $0.716 (\pm 0.156)$}       \\
+        SVM\cite{Al_Zoubi2020-ij} & \makecell{across sample AUC: $0.718 (\pm 0.2)$ \\  within sample AUC: $0.716 (\pm 0.156)$}       \\
         \hline
-        CNN   & \makecell{rsfMRI AUC: $0.8923$                 \\ tfMRI AUC 0.7683}   \\
+        CNN\cite{Leming2021-on}   & \makecell{rsfMRI AUC: $0.8923$                 \\ tfMRI AUC 0.7683}   \\
         \hline
-        SVM   & \makecell{avg ACC: $0.687$                     \\ max ACC: $0.751$} \\
+        SVM\cite{Weis2020-cc}     & \makecell{avg ACC: $0.687$                     \\ max ACC: $0.751$} \\
         \hline
-        PLSR  & AUC: $0.93$, ACC: $0.85$
+        PLSR\cite{Zhang2018-fi}   & AUC: $0.93$, ACC: $0.85$
         \\
         \hline
     \end{tabular}
@@ -141,18 +144,18 @@ Based on these previous study, we consider to use both dynamic and static functi
     \centering
     \begin{tabular}{|c|c|c|c|}
         \hline
-        Model         & Result                                    \\
+        Model                          & Result                                    \\
         \hline
-        CNN and LSTM  & AUC: $0.9805$, ACC: $0.9305 (\pm 0.0191)$
+        CNN and LSTM\cite{Fan2020-ql}  & AUC: $0.9805$, ACC: $0.9305 (\pm 0.0191)$
         \\
         \hline
-        Statistic analysis
-                      & \makecell{Pearson dFC: ACC: $0.7984$      \\
-        Partial sFC: ACC: $0.9005$                                \\
+        Statistic analysis\cite{Menon2019-ef}
+                                       & \makecell{Pearson dFC: ACC: $0.7984$      \\
+        Partial sFC: ACC: $0.9005$                                                 \\
             Pearson sFC: ACC: $0.6839$}
         \\
         \hline
-        Random forest & ACC: $0.94$                               \\
+        Random forest\cite{Sen2021-ws} & ACC: $0.94$                               \\
         \hline
     \end{tabular}
     \caption{The models and results of previous papers using dynamic functional connectivity (dFC) to predict gender.}
@@ -165,15 +168,15 @@ Based on these previous study, we consider to use both dynamic and static functi
 
 \subsubsection{Human Connectome Project (HCP)}
 
-The project use the Human Connectome Project (HCP) datasets.The HCP has mapped the healthy human connectome by collecting and freely sharing neuroimaging and behavioural data from 1,200 normal young adults, aged 22-35, using a protocol that includes structural and functional Magnetic Resonance Imaging (MRI, FMRI), Diffusion Tensor Imaging (dMRI) at 3 Tesla (3T), and behavioural and genetic testing. Using vastly improved methods of data acquisition, analysis and sharing, the HCP has provided the scientific community with data and discoveries that have greatly advanced our understanding of human brain structure, function and connectivity and their relationship to behaviour. It also provides a treasure trove of neuroimaging and behavioural data at an unprecedented level of detail. Currently, the HCP dataset is widely used to conduct research on the functional connectivity of the human brain.
+The project use the Human Connectome Project (HCP) datasets\cite{Glasser2013-ha}\cite{Van_Essen2012-gc}. The HCP has mapped the healthy human connectome by collecting and freely sharing neuroimaging and behavioural data from 1,200 normal young adults, aged 22-35, using a protocol that includes structural and functional Magnetic Resonance Imaging (MRI, FMRI), Diffusion Tensor Imaging (dMRI) at 3 Tesla (3T), and behavioural and genetic testing. Using vastly improved methods of data acquisition, analysis and sharing, the HCP has provided the scientific community with data and discoveries that have greatly advanced our understanding of human brain structure, function and connectivity and their relationship to behaviour. It also provides a treasure trove of neuroimaging and behavioural data at an unprecedented level of detail. Currently, the HCP dataset is widely used to conduct research on the functional connectivity of the human brain.
 
 Our experimental data were taken from timeseries data from the HCP dataset,  including the data with nodes (which means numbers of different brain regions) 15, 25, and 50, respectively, which from all 1003 subjects who performed four full rfMRI runs (for a total of 4800 time points). Each folder in the dataset contains 1003 txt files, each representing each person's brain network structure. For example, in the 100206.txt file under the 3T\_HCP1200\_MSMAll\_d15\_ts2 folder, 4800 rows $\times$ 15 columns of data with IDs of 100206 are recorded.
 
-\subsubsection{Data preprocessing}
+\subsubsection{Data preprocessing\cite{Filippini2009-so}\cite{Beckmann2004-jg}\cite{Smith2011-ki}\cite{Smith2013-gg}\cite{Allen2014-tl}}
 
 We use timeseries data to examine the functional connectivity between different brain regions. By reading a set of parameters and a file containing the ID of the subject, a directory structure is created for each subject, and a functional connection matrix is calculated based on the time series data.
 
-An easy way to estimate the elements of the covariance matrix is to use the sliding window technique. Based on the given number of nodes, window size, step size, and threshold parameters, a sliding window analysis is performed on the time series data for each subject. Subsequently, the window moves on the timeline and a new correlation coefficient is calculated at each point in time. In this way, we can dynamically evaluate the correlation changes between nodes based on time series data. This approach allows us to capture the structural properties of the data over time without the need for fixed global estimates.The sliding-window correlation at time t is defined as follows:
+An easy way to estimate the elements of the covariance matrix is to use the sliding window technique. Based on the given number of nodes, window size, step size, and threshold parameters, a sliding window analysis is performed on the time series data for each subject. Subsequently, the window moves on the timeline and a new correlation coefficient is calculated at each point in time. In this way, we can dynamically evaluate the correlation changes between nodes based on time series data. This approach allows us to capture the structural properties of the data over time without the need for fixed global estimates. The sliding-window correlation at time t is defined as follows:
 
 $$
     \tilde\rho_t = \frac{\sum_{s=t}^{t+w-1} y_{1, s} y_{2, s}}{\sum_{s=t}^{t+w-1} y_{1, s}^2 \sum_{s=t}^{t+w-1} y_{2, s}^2}.
@@ -183,7 +186,9 @@ According to this definition the correlation at time t is based on w future meas
 
 \subsubsection{Presentation of Dynamic Functional Connectivity Data}
 
-After preprocessing the data, we used heat maps to show the functional connectivity data of different nodes. As for 15-node charts, there are significant differences in functional connectivity data across different regions.By contrast, when the number of nodes increases to 25, these gaps are remarkably narrowed.Further expanding to 50 nodes, the diagrams show nearly consistent colors across different regions, indicating a high degree of similarity in functional connectivity between different brain regions,which means stronger uniformity between different regions.
+After preprocessing the data, we used heat maps to show the functional connectivity data of different nodes. As for 15-node charts, there are significant differences in functional connectivity data across different regions. By contrast, when the number of nodes increases to 25, these gaps are remarkably narrowed. Further expanding to 50 nodes, the diagrams show nearly consistent colors across different regions, indicating a high degree of similarity in functional connectivity between different brain regions, which means stronger uniformity between different regions.
+
+Table \ref{var-dfc} shows the maximum, minimum, and average variance of dynamic functional connectivity of different nodes.
 
 \begin{figure}[H]
     \centering
@@ -205,11 +210,9 @@ After preprocessing the data, we used heat maps to show the functional connectiv
         \includegraphics[width=0.18\textwidth]{../Analysis/DFC/size=480_step=180_rho=0.1/node=50_id=100206/n_c_12.jpg}
         \includegraphics[width=0.18\textwidth]{../Analysis/DFC/size=480_step=180_rho=0.1/node=50_id=100206/n_c_18.jpg}
         \includegraphics[width=0.2175\textwidth]{../Analysis/DFC/size=480_step=180_rho=0.1/node=50_id=100206/c_24.jpg}}
-    \caption{Centered dynamic functional connectivity with $N_{\text{node}} = 15$.}
+    \caption{Centered dynamic functional connectivity.}
     \label{sample-dfc-c}
 \end{figure}
-
-Table \ref{var-dfc} shows the maximum, minimum, and average variance of dynamic functional connectivity of different nodes.
 
 \begin{table}[H]
     \centering
@@ -232,14 +235,14 @@ Table \ref{var-dfc} shows the maximum, minimum, and average variance of dynamic 
 
 \subsubsection{Methods}
 
-SVM is a supervised learning algorithm for classification and regression analysis, the core idea of which is to find an optimal hyperplane in the feature space to maximize the spacing between different classes. So we want to find the most suitable hyperplane to divide the genders.
+SVM model \cite{Vapnik1997-yy}\cite{Cortes1995-dg} is a supervised learning algorithm for classification and regression analysis, the core idea of which is to find an optimal hyperplane in the feature space to maximize the spacing between different classes. So we want to find the most suitable hyperplane to divide the genders.
 Since it is hard to determine whether the brain network data is linearly separable before conducting experiments about SVM, we use both the linear SVM and the NuSVM model to train the brain network data respectively.
 
 \subsubsection{Results and Conclusions}
 
-The experimental results for SVM show that the classification accuracy of the model rises with the increase of nodes of the data.Taking the maximum AUC in different nodes as examples,it is 87.56\% for 15-node data, 92.02\% for 25-node data, and 97.49\% for 50-node data. These numerical results indicate that when the regional features are convergent, the classification accuracy will be correspondingly improved.Additionally,among all tests,the dynamic data of 15 nodes demonstrates the lowest accuracy,which is approximately at 69\%.This indicates that both dynamic and static functional connectivity data are linearly separable.
+The experimental results for SVM show that the classification accuracy of the model rises with the increase of nodes of the data. Taking the maximum AUC in different nodes as examples, it is 87.56\% for 15-node data, 92.02\% for 25-node data, and 97.49\% for 50-node data. These numerical results indicate that when the regional features are convergent, the classification accuracy will be correspondingly improved. Additionally, among all tests, the dynamic data of 15 nodes demonstrates the lowest accuracy, which is approximately at 69\%. This indicates that both dynamic and static functional connectivity data are linearly separable.
 
-However, when comparing the classification accuracy of dynamic data and static data under the same nodes, the performance of dynamic data is not better than that of static data.This might be attributed to some complex features that dynamic data takes so that it is difficult to extract all of them efficiently using single hyperplane.Therefore, we consider to train brain network data by CNN with ‘multiple hyperplanes’.
+However, when comparing the classification accuracy of dynamic data and static data under the same nodes, the performance of dynamic data is not better than that of static data. This might be attributed to some complex features that dynamic data takes so that it is difficult to extract all of them efficiently using single hyperplane. Therefore, we consider to train brain network data by CNN with `multiple hyperplanes'.
 
 \begin{figure}[H]
     \centering
@@ -278,92 +281,114 @@ Figure \ref{CNN-results} illustrates the overall results of the data training by
     \label{CNN-results}
 \end{figure}
 
-The appendix \ref{Ablation-study-for-CNN-model} shows detailed accuracy with all the frame data. In general, classification accuracy still grows with the increase of the number of nodes. However,when comparing the classification accuracy from data with the same nodes, we find that the number of output channels, whether to use dropout normalization, and even using different states of brain network data show little difference in the average and highest accuracy. At 15 nodes, the average AUC and maximum AUC are around 87\% and 92\% respectively. At 25 nodes, these values are around 93\% and 97\%. At 50 nodes, these values are around 97\% and 99\%.The differences in above conditions mainly affect the value of the lowest classification accuracy.To be more specific, when the number of output channels increases or the dropout normalization is not used, the lowest value will be slightly higher than that of other conditions.But it keeps almost the same when processing different states of data with controlling other above experimental conditions,which means that the dynamic data does not perform much better than static data although we try to extract more dynamic features.
+The appendix \ref{Ablation-study-for-CNN-model} shows detailed accuracy with all the frame data. In general, classification accuracy still grows with the increase of the number of nodes. However, when comparing the classification accuracy from data with the same nodes, we find that the number of output channels, whether to use dropout normalization, and even using different states of brain network data show little difference in the average and highest accuracy. At 15 nodes, the average AUC and maximum AUC are around 87\% and 92\% respectively. At 25 nodes, these values are around 93\% and 97\%. At 50 nodes, these values are around 97\% and 99\%. The differences in above conditions mainly affect the value of the lowest classification accuracy. To be more specific, when the number of output channels increases or the dropout normalization is not used, the lowest value will be slightly higher than that of other conditions. But it keeps almost the same when processing different states of data with controlling other above experimental conditions, which means that the dynamic data does not perform much better than static data although we try to extract more dynamic features.
 
 \section{Analysis}
 
 \subsection{Linear discriminant analysis (LDA)}
 
-\subsubsection{Methods}
+To gain a deeper understanding of the data distribution and find out which brain regions play important roles in classification, we processed the brain network data with linear discriminant analysis (LDA) \cite{Goldstein1976-aj}, which is used as a statistical method to find the optimal linear combination to maximise between-group variance and minimise within-group variance. Specifically, for a given dataset $\{\mathbf{x}_i, y_i\}_{i=1}^N$, the LDA method aims to find a vector pair $\mathbf{w}, \mathbf{c}$ such that the inner product $\langle \mathbf{x}_i  - \mathbf{c}, \mathbf{w} \rangle$ minimizes the interclass variance and maximizes the distance between the projected means of the classes.
 
-To gain a deeper understanding of the data distribution, we processed the brain network data using linear discriminant analysis (LDA), which is used as a statistical method to find the optimal linear combination to maximise between-group variance and minimise within-group variance. Specifically, for a given dataset $\{x_i, y_i\}_{i=1}^N$, the LDA aims to find a vector pair $y, c$ such that the inner product $\langle x_i  - c, y \rangle$ minimizes the interclass variance and maximizes the distance between the projected means of the classes.
-
-\subsubsection{Results And Conclusions}
-
-The following diagrams are distribution plots of both static and dynamic data in different nodes.Firstly, there are overlapping parts in the data distribution of male and female under different nodes, and these regions may represent the common brain network characteristics or functional connectivity patterns of both genders. In addition, with the increase of the number of nodes, the area of overlapping parts becomes smaller, which supports one of the conclusions in chapter 2 that more nodes lead to more accurate results.
-
-At the same time, we also use box plots to show outliers in the sample that are far from the median points.These outliers are present in both dynamic and static brain network data, with the dynamic data exhibiting no fewer outliers than the static data.Such points might have negative impacts on the experimental results,thereby reducing the accuracy of gender classification especially using dynamic brain network data.
+Figure \ref{LDA-example-sfc} and Figure \ref{LDA-example-dfc} shows the distributions of static and dynamic functional connectivity with different nodes, from which we can gain the following conclusions: (1) there are overlapping parts in the data distribution of male and female under different nodes, and these regions may represent the common brain network characteristics or functional connectivity patterns of both genders; (2) the area of overlapping parts becomes smaller with the increase of the number of nodes, which supports the conclusions that more nodes lead to more higher accuracy and AUC in section 2; (3) there are outliers presents in both dynamic and static functional connectivity, with the dynamic functional connectivity exhibiting no fewer outliers than the static data, which might have negative impacts on the experimental results, thereby reducing the accuracy of gender classification especially using dynamic brain network data.
 
 
 \begin{figure}[H]
     \centering
-    \subfloat[$N_{node} = 15$]{
+    \subfloat[$N_{\text{node}} = 15$]{
         \begin{minipage}[b]{0.3\textwidth}
             \includegraphics[width=1\textwidth]{../Analysis/LDA/node=15_size=4800_step=4800_rho=0.1/hist_0.jpg}
             \includegraphics[width=1\textwidth]{../Analysis/LDA/node=15_size=4800_step=4800_rho=0.1/box_0.jpg}
         \end{minipage}
     }
-    \subfloat[$N_{node} = 25$]{
+    \subfloat[$N_{\text{node}} = 25$]{
         \begin{minipage}[b]{0.3\textwidth}
             \includegraphics[width=1\textwidth]{../Analysis/LDA/node=25_size=4800_step=4800_rho=0.1/hist_0.jpg}
             \includegraphics[width=1\textwidth]{../Analysis/LDA/node=25_size=4800_step=4800_rho=0.1/box_0.jpg}
         \end{minipage}
     }
-    \subfloat[$N_{node} = 50$]{
+    \subfloat[$N_{\text{node}} = 50$]{
         \begin{minipage}[b]{0.3\textwidth}
             \includegraphics[width=1\textwidth]{../Analysis/LDA/node=50_size=4800_step=4800_rho=0.1/hist_0.jpg}
             \includegraphics[width=1\textwidth]{../Analysis/LDA/node=50_size=4800_step=4800_rho=0.1/box_0.jpg}
         \end{minipage}
     }
     \caption{LDA for sFC.}
-    % \label{LDA-example-1}
+    \label{LDA-example-sfc}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \subfloat[$N_{node} = 15$]{
+    \subfloat[$N_{\text{node}} = 15$]{
         \begin{minipage}[b]{0.3\textwidth}
             \includegraphics[width=1\textwidth]{../Analysis/LDA/node=15_size=480_step=180_rho=0.1/hist.jpg}
             \includegraphics[width=1\textwidth]{../Analysis/LDA/node=15_size=480_step=180_rho=0.1/box.jpg}
         \end{minipage}
     }
-    \subfloat[$N_{node} = 25$]{
+    \subfloat[$N_{\text{node}} = 25$]{
         \begin{minipage}[b]{0.3\textwidth}
             \includegraphics[width=1\textwidth]{../Analysis/LDA/node=25_size=480_step=180_rho=0.1/hist.jpg}
             \includegraphics[width=1\textwidth]{../Analysis/LDA/node=25_size=480_step=180_rho=0.1/box.jpg}
         \end{minipage}
     }
-    \subfloat[$N_{node} = 50$]{
+    \subfloat[$N_{\text{node}} = 50$]{
         \begin{minipage}[b]{0.3\textwidth}
             \includegraphics[width=1\textwidth]{../Analysis/LDA/node=50_size=480_step=180_rho=0.1/hist.jpg}
             \includegraphics[width=1\textwidth]{../Analysis/LDA/node=50_size=480_step=180_rho=0.1/box.jpg}
         \end{minipage}
     }
     \caption{LDA for dFC.}
-    % \label{LDA-example-1}
+    \label{LDA-example-dfc}
 \end{figure}
 
 \subsection{Neuroscientiﬁc interpretations}
 
-The most significant portion of nodes was calculated based on the direction vectors obtained from fitting the LDA model to identify brain regions with significant sex differences. For static brain networks, the direction vectors were used directly; for dynamic brain networks, the mean of all direction vectors was used. The results were sorted by mode size and the brain connections corresponding to the top 10\% largest elements were taken, and then the intersection of the results obtained for static and dynamic brain networks with the same number of nodes was taken.
+Through the above experiments and analysis, we can find several brain regions with the most significant gender differences. Specifically, denoted by $w_{ij} = w_{ji}$ the weight (particularly, average weight for dFC) for the partial correlation of node $i$ and $j$ given by the models, we sum up the absolute value of the weights for the node $i$, $w_i = \sum_{j=1}^{n} \vert w_{ij} \vert$, which represents how important the region is in the classification. Then the brain regions with corresponding value larger than the threshold will be regard as the most significant regions.
+
+The most significant region for $N_{\text{node}} = 15, 25$ is shown as Figure \ref{msr-n-15} and Figure \ref{msr-n-25}, with the following conclusions: (1) the most significant region of static and dynamic functional connectivity are similar, which means that the differences in these regions are essential in gender classification; (2) the frontal lobe and the parietal lobe are the most significant, meanwhile the diencephalon, the temporal lobe and the occipital lobe also play a important role in gender classification; (3) these region of difference implies that the gender difference may lead to differences in emotion, memory, perception, etc., which is also shows in the previous psychology research\cite{skaalvik1994gender}\cite{soetanto2006there}\cite{wiesenfeld2005sex}\cite{chaplin2013gender}\cite{fischer2018gender}\cite{guillem2005gender}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d15.ica/0010.png}
+    \includegraphics[width=0.2\textwidth]{../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d15.ica/0005.png}
+    \includegraphics[width=0.2\textwidth]{../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d15.ica/0008.png}
+    \includegraphics[width=0.2\textwidth]{../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d15.ica/0001.png}
+    \caption{The most significant region for $N_{\text{node}} = 15$.}
+    \label{msr-n-15}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0004.png}
+    \includegraphics[width=0.2\textwidth]{../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0005.png}
+    \includegraphics[width=0.2\textwidth]{../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0001.png}
+    \includegraphics[width=0.2\textwidth]{../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0009.png} \\
+    \includegraphics[width=0.2\textwidth]{../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0007.png}
+    \includegraphics[width=0.2\textwidth]{../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0024.png}
+    \includegraphics[width=0.2\textwidth]{../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0017.png}
+    \includegraphics[width=0.2\textwidth]{../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0021.png}
+    \caption{The most significant region for $N_{\text{node}} = 25$.}
+    \label{msr-n-25}
+\end{figure}
 
 \section{Discussion}
 
-In our experiments, we use CNN and SVM to process brain network data, and record the accuracy rates and AUC from these 2 models respectively. When comparing the same metrics under different models (such as the AUC from 2 models), we find that CNN gets higher AUC than SVM, while they have similar performances on the accuracy rate. This might be attributed to feature redundancy from data processed by CNN, which means convergence from features extracted by different convolutional kernels.
+In pre-processing step, the choices of size and moving step for sliding windows would make a big difference on the precision of dynamic functional connectivity data that we compute. To be more specific, a shorter window size would lead to better time resolution but poorer frequency resolution, while a wider window size is to the contrary\cite{Leiber2023-de}. Additionally, a larger moving step could reduce the complexity of computation but decrease the detection accuracy\cite{jiang2015flexible}. Consequently, it is important to balance both time and frequency resolution and enhance the capture efficiency of signal characteristics and overall trends for improvement of our experiments in the future. Toward this, employing Fourier analysis\cite{Mantini2007-sv} or wavelet analysis\cite{Medda2016-vh} might work. These 2 methods could analyse complex patterns from time series data with the former decomposing the periodic signal and the latter providing the local features of the signal in the time and frequency domains\cite{Guo2022-dk}.
 
-One possible solution for this issue is to set the coefficients of CNN to be orthogonal. On the one hand, it might ensure the unique information captured by different convolutional kernels and reduce the correlation among features, which improves the efficiency of feature extraction. On the other hand, by maintaining the orthogonality of the weight matrix,  orthogonal initialization could alleviate the explosion and vanishing of gradients\cite{Achour2021-rl},  which accelerating the convergence rate of models and increasing the efficiency and performance of training.
+Additionally, the experimental results for classification with 2 different models training reveal that the AUC of classification is slightly higher with the data trained by CNN than by SVM, while the accuracy rate remains at the same level between the two models. This might be attributed to redundant features extracted by CNN when training data, which means features from different convolutional kernels exhibit convergence.
 
-Additionally, when pre-processing time series data, choosing a reasonable size and moving step for sliding window might lead to more precise brain functional connectivity data for us. Such adjustment could improve both time and frequency resolution and the capture efficiency of signal characteristics and overall trends\cite{Leiber2023-de}. To achieve this, we could use Fourier analysis\cite{Mantini2007-sv} or wavelet analysis\cite{Medda2016-vh} to enhance our experiments. These 2 methods could help us to analyse complex patterns from functional connectivity data. To be more specific, the former is to decompose the periodic signal and the latter is to provide the local features of the signal in the time and frequency domains\cite{Guo2022-dk}.
+To address this issue in the future, we might consider to set the coefficients of CNN to be orthogonal. On the one hand,this approach could ensure the unique features extracted from different convolutional kernels and reduce the correlation among features by Orthogonal Projection Loss (OPL)\cite{ranasinghe2021orthogonal}, which offers more significant differences among multiple classes and therefore improves the accuracy of classification. On the other hand, orthogonal initialization could keep the gradients stable during the back-propagation process by maintaining the orthogonality of the weight matrix and therefore alleviate the explosion and vanishing of gradients\cite{Achour2021-rl}, which accelerating the convergence rate of models and increasing the efficiency and performance of training.
 
-Finally, we use linear classifer in our experiments and find that both dynamic and static functional connectivity data are linearly separable. But this might not work well if the underlying relationships between the classes are non-linear or if the data contains complex interactions that cannot be captured by a linear model. In this condition, we might consider to use non-linear classifer such as quadratic ones to partition data, since the quadratic could consider the inequality of the in-class covariance matrix,  the decision boundary is allowed to take a quadratic form\cite{Rasero2018-hi}, so as to better adapt to the complex structure in the data.
+Finally, the conclusion that both dynamic and static functional connectivity data are linearly separable bases on the results from 2 linear classifers that we use. But this idea exists some limitations. For example, if the data need to be partitioned to some non-linear target classes, or some complex features of data could not extracted by linear models efficiently. In these conditions, the non-linear classifer such as quadratic classifer would be utilized to partition such data in our future experiments since it could consider the inequality of the in-class covariance matrix and therefore the decision boundary is allowed to take a quadratic form\cite{Rasero2018-hi}, so as to better adapt to the complex structure in the data and partition data with higher efficiency.
+
+\section{Conclusion}
+
+Our results show that there exists gender difference in resting-state functional connectivity, which is linear separable and the accuracy and AUC of linear classifer can reach or even exceed the level of nonlinear classifiers in other papers. The coefficients we obtained also shows that the both for static and dynamic functional connectivity, some of the brain region, such as the frontal lobe and the parietal lobe, are significant in gender classification, which implies that the gender difference may lead to some essential differences in these region, and also the brain functions like emotion, memory, perception, etc..
 
 \newpage
 
-\addcontentsline{toc}{section}{References}
-
 \bibliographystyle{unsrt}
-% \bibliographystyle{amsplain}
 \bibliography{reference.bib}
+\addcontentsline{toc}{section}{References}
 
 \newpage
 

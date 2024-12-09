@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.8.5)  7 DEC 2024 17:26
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.8.5)  9 DEC 2024 11:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1198,7 +1198,12 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 93.
 
 (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
+
+ []
+
+[1
 
 ] (./report.toc
 LaTeX Font Info:    Font shape `TU/NewCMMath-Regular.otf(2)/m/n' will be
@@ -1217,13 +1222,53 @@ LaTeX Font Info:    Font shape `TU/NewCMMath-Regular.otf(3)/m/n' will be
 \tf@toc=\write5
 \openout5 = `report.toc'.
 
+ [0]
 
-[0]
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 111.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 111.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 111.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 111.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 111.
+
 LaTeX Font Info:    Font shape `TU/NewCM10-Regular.otf(0)/m/sl' in size <10.95>
  not available
 (Font)              Font shape `TU/NewCM10-Regular.otf(0)/m/it' tried instead o
-n input line 161.
- [1] [2]
+n input line 164.
+[1]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 175.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 175.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 175.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 175.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 175.
+
+[2]
 File: ../Analysis/DFC/size=480_step=180_rho=0.1/node=15_id=100206/n_c_0.jpg Gra
 phic file (type bmp)
 <../Analysis/DFC/size=480_step=180_rho=0.1/node=15_id=100206/n_c_0.jpg>
@@ -1240,13 +1285,13 @@ File: ../Analysis/DFC/size=480_step=180_rho=0.1/node=15_id=100206/c_24.jpg Grap
 hic file (type bmp)
 <../Analysis/DFC/size=480_step=180_rho=0.1/node=15_id=100206/c_24.jpg>
 LaTeX Font Info:    Font shape `TU/NewCMMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 195.
+(Font)              scaled to size 9.00096pt on input line 200.
 LaTeX Font Info:    Font shape `TU/NewCMMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 195.
+(Font)              scaled to size 5.00053pt on input line 200.
 LaTeX Font Info:    Font shape `TU/NewCMMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 195.
+(Font)              scaled to size 8.99904pt on input line 200.
 LaTeX Font Info:    Font shape `TU/NewCMMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 195.
+(Font)              scaled to size 4.99947pt on input line 200.
 File: ../Analysis/DFC/size=480_step=180_rho=0.1/node=25_id=100206/n_c_0.jpg Gra
 phic file (type bmp)
 <../Analysis/DFC/size=480_step=180_rho=0.1/node=25_id=100206/n_c_0.jpg>
@@ -1310,7 +1355,6 @@ le (type bmp)
 File: ../Analysis/LDA/node=50_size=4800_step=4800_rho=0.1/box_0.jpg Graphic fil
 e (type bmp)
 <../Analysis/LDA/node=50_size=4800_step=4800_rho=0.1/box_0.jpg>
- [8]
 File: ../Analysis/LDA/node=15_size=480_step=180_rho=0.1/hist.jpg Graphic file (
 type bmp)
 <../Analysis/LDA/node=15_size=480_step=180_rho=0.1/hist.jpg>
@@ -1329,7 +1373,46 @@ type bmp)
 File: ../Analysis/LDA/node=50_size=480_step=180_rho=0.1/box.jpg Graphic file (t
 ype bmp)
 <../Analysis/LDA/node=50_size=480_step=180_rho=0.1/box.jpg>
- [9] [10] (./report.bbl) [11]
+ [8]
+File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d15.ica/0010.png Grap
+hic file (type bmp)
+<../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d15.ica/0010.png>
+File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d15.ica/0005.png Grap
+hic file (type bmp)
+<../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d15.ica/0005.png>
+File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d15.ica/0008.png Grap
+hic file (type bmp)
+<../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d15.ica/0008.png>
+File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d15.ica/0001.png Grap
+hic file (type bmp)
+<../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d15.ica/0001.png>
+ [9]
+File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0004.png Grap
+hic file (type bmp)
+<../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0004.png>
+File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0005.png Grap
+hic file (type bmp)
+<../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0005.png>
+File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0001.png Grap
+hic file (type bmp)
+<../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0001.png>
+File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0009.png Grap
+hic file (type bmp)
+<../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0009.png>
+File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0007.png Grap
+hic file (type bmp)
+<../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0007.png>
+File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0024.png Grap
+hic file (type bmp)
+<../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0024.png>
+File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0017.png Grap
+hic file (type bmp)
+<../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0017.png>
+File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0021.png Grap
+hic file (type bmp)
+<../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0021.png>
+ [10] [11] (./report.bbl [12] [13] [14])
+[15]
 File: ../SVM/acc_linear_0.1.jpg Graphic file (type bmp)
 <../SVM/acc_linear_0.1.jpg>
 File: ../SVM/auc_linear_0.1.jpg Graphic file (type bmp)
@@ -1338,7 +1421,7 @@ File: ../SVM/acc_nu_0.1.jpg Graphic file (type bmp)
 <../SVM/acc_nu_0.1.jpg>
 File: ../SVM/auc_nu_0.1.jpg Graphic file (type bmp)
 <../SVM/auc_nu_0.1.jpg>
- [12] [13]
+ [16] [17]
 File: ../Result/test_acc_box_channel=1_dropout=0.0.jpg Graphic file (type bmp)
 <../Result/test_acc_box_channel=1_dropout=0.0.jpg>
 File: ../Result/test_auc_box_channel=1_dropout=0.0.jpg Graphic file (type bmp)
@@ -1355,8 +1438,7 @@ File: ../Result/test_acc_box_channel=2_dropout=0.1.jpg Graphic file (type bmp)
 <../Result/test_acc_box_channel=2_dropout=0.1.jpg>
 File: ../Result/test_auc_box_channel=2_dropout=0.1.jpg Graphic file (type bmp)
 <../Result/test_auc_box_channel=2_dropout=0.1.jpg>
-
-[14]
+ [18]
 File: ../Result/test_acc_box_channel=4_dropout=0.0.jpg Graphic file (type bmp)
 <../Result/test_acc_box_channel=4_dropout=0.0.jpg>
 File: ../Result/test_auc_box_channel=4_dropout=0.0.jpg Graphic file (type bmp)
@@ -1365,21 +1447,21 @@ File: ../Result/test_acc_box_channel=4_dropout=0.1.jpg Graphic file (type bmp)
 <../Result/test_acc_box_channel=4_dropout=0.1.jpg>
 File: ../Result/test_auc_box_channel=4_dropout=0.1.jpg Graphic file (type bmp)
 <../Result/test_auc_box_channel=4_dropout=0.1.jpg>
- [15] [16] (./report.aux)
+ [19] [20] (./report.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-03>
  ***********
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 4E2ACE561EB220C0C96E53AB3D035D45;4323.
+(rerunfilecheck)             Checksum: 42B682B1D54181E25D1DA3DED9C120DA;4747.
  ) 
 Here is how much of TeX's memory you used:
- 21537 strings out of 475845
- 409599 string characters out of 5781365
+ 21690 strings out of 475845
+ 417918 string characters out of 5781365
  1933879 words of memory out of 5000000
- 42243 multiletter control sequences out of 15000+600000
- 568004 words of font info for 125 fonts, out of 8000000 for 9000
+ 42378 multiletter control sequences out of 15000+600000
+ 568394 words of font info for 131 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 79i,16n,114p,1225b,506s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,16n,114p,1230b,506s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on report.pdf (18 pages).
+Output written on report.pdf (22 pages).
