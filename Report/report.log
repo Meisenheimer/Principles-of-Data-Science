@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.8.5)  9 DEC 2024 19:20
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.8.5)  9 DEC 2024 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1223,11 +1223,15 @@ LaTeX Font Info:    Font shape `TU/NewCMMath-Regular.otf(3)/m/n' will be
 \openout5 = `report.toc'.
 
  [0]
+Overfull \hbox (1.58098pt too wide) in paragraph at lines 127--152
+ [][] 
+ []
+
 LaTeX Font Info:    Font shape `TU/NewCM10-Regular.otf(0)/m/sl' in size <10.95>
  not available
 (Font)              Font shape `TU/NewCM10-Regular.otf(0)/m/it' tried instead o
 n input line 155.
- [1] [2]
+[1] [2]
 File: ./figure/method.png Graphic file (type bmp)
 <./figure/method.png>
  [3] [4]
@@ -1371,8 +1375,8 @@ hic file (type bmp)
 File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0021.png Grap
 hic file (type bmp)
 <../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0021.png>
- [10] [11]
-(./report.bbl [12] [13] [14]) [15]
+ [10] [11] (./report.bbl [12] [13] [14])
+[15]
 File: ../SVM/acc_linear_0.1.jpg Graphic file (type bmp)
 <../SVM/acc_linear_0.1.jpg>
 File: ../SVM/auc_linear_0.1.jpg Graphic file (type bmp)

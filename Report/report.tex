@@ -126,30 +126,30 @@ In this paper, we designed and implemented a model based on multiple hyperplanes
     \centering
     \begin{tabular}{|c|c|c|c|}
         \hline
-        Year & Method                                & Input & Result                                         \\
+        Author                     & Method                             & Input & Result                                        \\
         \hline
-        2020 & SVM\cite{Al_Zoubi2020-ij}             & sFC   & \makecell{across sample AUC: $0.718 (\pm 0.2)$ \\  within sample AUC: $0.716 (\pm 0.156)$}       \\
+        Obada Al Zoubi, et al.     & SVM                                & sFC   & \makecell{across sample AUC: $0.72 (\pm 0.2)$ \\  within sample AUC: $0.72 (\pm 0.16)$}       \\
         \hline
-        2021 & CNN\cite{Leming2021-on}               & sFC   & \makecell{rsfMRI AUC: $0.8923$                 \\ tfMRI AUC 0.7683}   \\
+        Matthew Leming, et al.     & CNN                                & sFC   & \makecell{rsfMRI AUC: $0.89$                  \\ tfMRI AUC $0.77$}   \\
         \hline
-        2020 & SVM\cite{Weis2020-cc}                 & sFC   & \makecell{avg ACC: $0.687$                     \\ max ACC: $0.751$} \\
+        Susanne Weis, et al.       & SVM                                & sFC   & \makecell{avg ACC: $0.69$                     \\ max ACC: $0.75$} \\
         \hline
-        2018 & PLSR\cite{Zhang2018-fi}               & sFC   & AUC: $0.93$, ACC: $0.85$
+        Chao Zhang, et al.         & PLSR                               & sFC   & AUC: $0.93$, ACC: $0.85$
         \\
         \hline
-        2020 & CNN and LSTM\cite{Fan2020-ql}         & dFC   & AUC: $0.9805$, ACC: $0.9305 (\pm 0.0191)$
+        Liangwei Fan, et al.       & CNN \& LSTM                        & dFC   & AUC: $0.98$, ACC: $0.93 (\pm 0.02)$
         \\
         \hline
-        2019 & Statistic analysis\cite{Menon2019-ef} & dFC
-             & \makecell{Pearson dFC: ACC: $0.7984$                                                           \\
-        Partial sFC: ACC: $0.9005$                                                                            \\
-            Pearson sFC: ACC: $0.6839$}
+        Sreevalsan S Menon, et al. & Statistics                         & dFC
+                                   & \makecell{Pearson dFC: ACC: $0.80$                                                         \\
+        Partial sFC: ACC: $0.90$                                                                                                \\
+            Pearson sFC: ACC: $0.68$}
         \\
         \hline
-        2021 & Random forest\cite{Sen2021-ws}        & dFC   & ACC: $0.94$                                    \\
+        Bhaskar Sen, et al.        & Random forest                      & dFC   & ACC: $0.94$                                   \\
         \hline
     \end{tabular}
-    \caption{Some examples of previous studies which use machine learning models and functional connectivity to predict gender, where sFC represents the static functional connectivity and dFC represents the dynamic functional connectivity.}
+    \caption{Some examples of previous studies which use machine learning models and functional connectivity to predict gender, where sFC represents the static functional connectivity and dFC represents the dynamic functional connectivity. All the data is rounded up to 2 decimal places.}
     \label{intro-previous}
 \end{table}
 
