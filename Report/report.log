@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.8.5)  9 DEC 2024 11:43
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.8.5)  9 DEC 2024 19:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1223,52 +1223,14 @@ LaTeX Font Info:    Font shape `TU/NewCMMath-Regular.otf(3)/m/n' will be
 \openout5 = `report.toc'.
 
  [0]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 111.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 111.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 111.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 111.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 111.
-
 LaTeX Font Info:    Font shape `TU/NewCM10-Regular.otf(0)/m/sl' in size <10.95>
  not available
 (Font)              Font shape `TU/NewCM10-Regular.otf(0)/m/it' tried instead o
-n input line 164.
-[1]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 175.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 175.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 175.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 175.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 175.
-
-[2]
+n input line 155.
+ [1] [2]
+File: ./figure/method.png Graphic file (type bmp)
+<./figure/method.png>
+ [3] [4]
 File: ../Analysis/DFC/size=480_step=180_rho=0.1/node=15_id=100206/n_c_0.jpg Gra
 phic file (type bmp)
 <../Analysis/DFC/size=480_step=180_rho=0.1/node=15_id=100206/n_c_0.jpg>
@@ -1285,13 +1247,13 @@ File: ../Analysis/DFC/size=480_step=180_rho=0.1/node=15_id=100206/c_24.jpg Grap
 hic file (type bmp)
 <../Analysis/DFC/size=480_step=180_rho=0.1/node=15_id=100206/c_24.jpg>
 LaTeX Font Info:    Font shape `TU/NewCMMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 200.
+(Font)              scaled to size 9.00096pt on input line 214.
 LaTeX Font Info:    Font shape `TU/NewCMMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 200.
+(Font)              scaled to size 5.00053pt on input line 214.
 LaTeX Font Info:    Font shape `TU/NewCMMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 200.
+(Font)              scaled to size 8.99904pt on input line 214.
 LaTeX Font Info:    Font shape `TU/NewCMMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 200.
+(Font)              scaled to size 4.99947pt on input line 214.
 File: ../Analysis/DFC/size=480_step=180_rho=0.1/node=25_id=100206/n_c_0.jpg Gra
 phic file (type bmp)
 <../Analysis/DFC/size=480_step=180_rho=0.1/node=25_id=100206/n_c_0.jpg>
@@ -1322,21 +1284,19 @@ aphic file (type bmp)
 File: ../Analysis/DFC/size=480_step=180_rho=0.1/node=50_id=100206/c_24.jpg Grap
 hic file (type bmp)
 <../Analysis/DFC/size=480_step=180_rho=0.1/node=50_id=100206/c_24.jpg>
- [3] [4]
+ [5]
 File: ../SVM/linear_0.1.jpg Graphic file (type bmp)
 <../SVM/linear_0.1.jpg>
 File: ../SVM/nu_0.1.jpg Graphic file (type bmp)
 <../SVM/nu_0.1.jpg>
- [5]
-File: ./figure/method.png Graphic file (type bmp)
-<./figure/method.png>
+ [6]
 File: ../Result/bar_channel=4_dropout=0.1.jpg Graphic file (type bmp)
 <../Result/bar_channel=4_dropout=0.1.jpg>
 File: ../Result/test_acc_box_channel=4_dropout=0.1.jpg Graphic file (type bmp)
 <../Result/test_acc_box_channel=4_dropout=0.1.jpg>
 File: ../Result/test_auc_box_channel=4_dropout=0.1.jpg Graphic file (type bmp)
 <../Result/test_auc_box_channel=4_dropout=0.1.jpg>
- [6] [7]
+ [7]
 File: ../Analysis/LDA/node=15_size=4800_step=4800_rho=0.1/hist_0.jpg Graphic fi
 le (type bmp)
 <../Analysis/LDA/node=15_size=4800_step=4800_rho=0.1/hist_0.jpg>
@@ -1411,8 +1371,8 @@ hic file (type bmp)
 File: ../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0021.png Grap
 hic file (type bmp)
 <../Analysis/MIR/groupICA/groupICA_3T_HCP1200_MSMAll_d25.ica/0021.png>
- [10] [11] (./report.bbl [12] [13] [14])
-[15]
+ [10] [11]
+(./report.bbl [12] [13] [14]) [15]
 File: ../SVM/acc_linear_0.1.jpg Graphic file (type bmp)
 <../SVM/acc_linear_0.1.jpg>
 File: ../SVM/auc_linear_0.1.jpg Graphic file (type bmp)
@@ -1453,15 +1413,15 @@ LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-03>
  ***********
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 42B682B1D54181E25D1DA3DED9C120DA;4747.
+(rerunfilecheck)             Checksum: 8150D0ACDC012B69B41DEAC5245F3B48;3268.
  ) 
 Here is how much of TeX's memory you used:
- 21690 strings out of 475845
- 417918 string characters out of 5781365
+ 21689 strings out of 475845
+ 417908 string characters out of 5781365
  1933879 words of memory out of 5000000
- 42378 multiletter control sequences out of 15000+600000
+ 42377 multiletter control sequences out of 15000+600000
  568394 words of font info for 131 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 79i,16n,114p,1230b,506s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,16n,114p,1339b,619s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on report.pdf (22 pages).
