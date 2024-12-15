@@ -65,20 +65,20 @@ SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
 
 \author{
     \parbox{0.2\textwidth}{
-        \centering GUO Siye \\
-        \centering 24112709G
+        \centering WANG Zeyu \\
+        \centering 24056788G
     }
     \parbox{0.2\textwidth}{
         \centering LIU Chang \\
         \centering 24116156G
     }
     \parbox{0.2\textwidth}{
-        \centering WANG Zeyu \\
-        \centering 24056788G
-    }
-    \parbox{0.2\textwidth}{
         \centering ZHANG Qidan \\
         \centering 24126201G
+    }
+    \parbox{0.2\textwidth}{
+        \centering GUO Siye \\
+        \centering 24112709G
     }
 }
 
@@ -175,7 +175,7 @@ According to this definition the correlation at time $t$ is based on $w$ future 
 \subsection{Models}
 \label{sec-Models}
 
-Different form the previous papers, we design a model classify the data with multiple hyperplanes. Specifically, given a dataset $\{(\mathbf{x}_i , y_i)\}_{i=1}^N$, we aims to find some vectors $\{\mathbf{w}_k\}_{k=1}^m$ and numbers $\{b_k\}_{k=1}^m$ such that for any given data $\mathbf{x}$ can be classificated via the tuple of distance $(\langle \mathbf{x}, \mathbf{w}_1 \rangle - b_1, dots, \langle \mathbf{x}, \mathbf{w}_m \rangle - b_m)$. In a simple case, for a input $\mathbf{x}_i$, we can check whether for all $j = 1, dots, m$, $\langle \mathbf{x}_i, \mathbf{w}_j \rangle - b_j gt.eq 0$ and split the input data ${\mathbf{x}_i}_{i=1}^n$ into two classes. Also, a nonlinear classifier like MLP can be used for classification.
+Different form the previous papers, we design a model classify the data with multiple hyperplanes. Specifically, given a dataset $\{(\mathbf{x}_i , y_i)\}_{i=1}^N$, we aims to find some vectors $\{\mathbf{w}_k\}_{k=1}^m$ and numbers $\{b_k\}_{k=1}^m$ such that for any given data $\mathbf{x}$ can be classificated via the tuple of distance $(\langle \mathbf{x}, \mathbf{w}_1 \rangle - b_1, dots, \langle \mathbf{x}, \mathbf{w}_m \rangle - b_m)$. In a simple case, for a input $\mathbf{x}_i$, we can check whether for all $j = 1, dots, m$, $\langle \mathbf{x}_i, \mathbf{w}_j \rangle - b_j \geq 0$ and split the input data ${\mathbf{x}_i}_{i=1}^n$ into two classes. Also, a nonlinear classifier like MLP can be used for classification.
 
 In order to avoid flukes, the dataset is splited into training dataset(80\%) and test dataset(20\%), and repeat the experiment for 150 times, which implies an error of the results very likely to be lower than $1\%$ (the detailed proof can be find in appendix \ref{analysis-for-repetitions}).
 
@@ -615,5 +615,15 @@ Then for $n = 150$, the result is shown as Table \ref{table-a-as-repetitions}, w
     \caption{Probability of errors.}
     \label{table-a-as-repetitions}
 \end{table}
+
+\section{Author Contributions}
+
+Wang Zeyu: Conceptualization, Methodology, Data Curation, Software, Formal Analysis, Visualization, Writing-Review \& Editing.
+
+Liu Chang: Conceptualization, Methodology, Validation, Visualization, Writing-Original Draft, Writing-Review \& Editing.
+
+Zhang Qidan: Conceptualization, Methodology, Formal Analysis, Validation, Writing-Original Draft.
+
+Guo Siye: Conceptualization, Methodology, Formal Analysis, Validation, Writing-Original Draft.
 
 \end{document}
